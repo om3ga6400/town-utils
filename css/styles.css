@@ -95,9 +95,7 @@ body {
   padding: 0;
   background: var(--ctp-base);
   color: var(--ctp-text);
-  font-family:
-    Roboto,
-    sans-serif;
+  font-family: Roboto, sans-serif;
 }
 
 header {
