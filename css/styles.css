@@ -95,7 +95,12 @@ body {
   padding: 0;
   background: var(--ctp-base);
   color: var(--ctp-text);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
 }
 
 header {
