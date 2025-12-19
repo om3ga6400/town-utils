@@ -6,7 +6,7 @@ jobs:
   format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - uses: creyD/prettier_action@v4.6
         with:
           prettier_options: --write .
