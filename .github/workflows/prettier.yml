@@ -1,10 +1,7 @@
 name: Prettier
-
 on: push
-
 permissions:
   contents: write
-
 jobs:
   format:
     runs-on: ubuntu-latest
@@ -12,4 +9,4 @@ jobs:
       - uses: actions/checkout@v4
       - uses: creyD/prettier_action@v4.6
         with:
-          prettier_options: --write . --ignore-path .github/.prettierignore
+          prettier_options: --write .
