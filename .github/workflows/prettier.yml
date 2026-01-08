@@ -9,4 +9,5 @@ jobs:
       - uses: actions/checkout@v4
       - uses: creyD/prettier_action@v4.6
         with:
+          prettier_version: "next"
           prettier_options: --write .
