@@ -414,7 +414,7 @@ export const WEAPON_STATS = {
     weight: 2.5,
     ammo: "20+1",
   },
-  G36C: {
+  "G36C": {
     damage_max: 40,
     damage_min: 30,
     damage_falloff_start: 150,
@@ -434,7 +434,7 @@ export const WEAPON_STATS = {
     weight: 6,
     ammo: "30+1",
   },
-  G3A3: {
+  "G3A3": {
     damage_max: 53,
     damage_min: 44,
     damage_falloff_start: 175,
@@ -454,7 +454,7 @@ export const WEAPON_STATS = {
     weight: 12,
     ammo: "20+1",
   },
-  HK416: {
+  "HK416": {
     damage_max: 40,
     damage_min: 30,
     damage_falloff_start: 150,
@@ -554,7 +554,7 @@ export const WEAPON_STATS = {
     weight: 4,
     ammo: "10+1",
   },
-  Intervention: {
+  "Intervention": {
     damage_max: 100,
     damage_min: 50,
     damage_falloff_start: 250,
@@ -594,7 +594,7 @@ export const WEAPON_STATS = {
     weight: 10,
     ammo: "10+1",
   },
-  L85A2: {
+  "L85A2": {
     damage_max: 33,
     damage_min: 23,
     damage_falloff_start: 150,
@@ -614,7 +614,7 @@ export const WEAPON_STATS = {
     weight: 10,
     ammo: "30+1",
   },
-  L96A1: {
+  "L96A1": {
     damage_max: 85,
     damage_min: 35,
     damage_falloff_start: 250,
@@ -694,7 +694,7 @@ export const WEAPON_STATS = {
     weight: 12,
     ammo: "8",
   },
-  M16A1: {
+  "M16A1": {
     damage_max: 20,
     damage_min: 16,
     damage_falloff_start: 130,
@@ -714,7 +714,7 @@ export const WEAPON_STATS = {
     weight: 8,
     ammo: "30+1",
   },
-  M16A2: {
+  "M16A2": {
     damage_max: 20,
     damage_min: 16,
     damage_falloff_start: 130,
@@ -734,7 +734,7 @@ export const WEAPON_STATS = {
     weight: 8,
     ammo: "20+1",
   },
-  M1911: {
+  "M1911": {
     damage_max: 25,
     damage_min: 15,
     damage_falloff_start: 75,
@@ -794,7 +794,7 @@ export const WEAPON_STATS = {
     weight: 8,
     ammo: "50+1",
   },
-  M9: {
+  "M9": {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -814,7 +814,7 @@ export const WEAPON_STATS = {
     weight: 2,
     ammo: "15+1",
   },
-  M870: {
+  "M870": {
     damage_max: 15,
     damage_min: 3,
     pellet_count: 12,
@@ -875,7 +875,7 @@ export const WEAPON_STATS = {
     weight: 3,
     ammo: "6",
   },
-  Makarov: {
+  "Makarov": {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -915,7 +915,7 @@ export const WEAPON_STATS = {
     weight: 7,
     ammo: "30+1",
   },
-  MG4: {
+  "MG4": {
     damage_max: 33,
     damage_min: 23,
     damage_falloff_start: 175,
@@ -975,7 +975,7 @@ export const WEAPON_STATS = {
     weight: 12,
     ammo: "20+1",
   },
-  MK18: {
+  "MK18": {
     damage_max: 40,
     damage_min: 30,
     damage_falloff_start: 150,
@@ -1015,7 +1015,7 @@ export const WEAPON_STATS = {
     weight: 15,
     ammo: "1",
   },
-  MP40: {
+  "MP40": {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -1035,7 +1035,7 @@ export const WEAPON_STATS = {
     weight: 8,
     ammo: "32",
   },
-  MP443: {
+  "MP443": {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -1055,7 +1055,7 @@ export const WEAPON_STATS = {
     weight: 2.5,
     ammo: "17+1",
   },
-  MP5A2: {
+  "MP5A2": {
     damage_max: 14,
     damage_min: 8,
     damage_falloff_start: 130,
@@ -1075,7 +1075,7 @@ export const WEAPON_STATS = {
     weight: 5,
     ammo: "30+1",
   },
-  MP5K: {
+  "MP5K": {
     damage_max: 18,
     damage_min: 9,
     damage_falloff_start: 100,
@@ -1095,7 +1095,7 @@ export const WEAPON_STATS = {
     weight: 4,
     ammo: "30+1",
   },
-  MP7: {
+  "MP7": {
     damage_max: 29,
     damage_min: 22,
     damage_falloff_start: 100,
@@ -1115,7 +1115,7 @@ export const WEAPON_STATS = {
     weight: 5,
     ammo: "40+1",
   },
-  MPX: {
+  "MPX": {
     damage_max: 25,
     damage_min: 18,
     damage_falloff_start: 120,
@@ -1135,7 +1135,7 @@ export const WEAPON_STATS = {
     weight: 6,
     ammo: "30+1",
   },
-  P226: {
+  "P226": {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -1155,7 +1155,7 @@ export const WEAPON_STATS = {
     weight: 2.5,
     ammo: "15+1",
   },
-  P90: {
+  "P90": {
     damage_max: 27,
     damage_min: 21,
     damage_falloff_start: 125,
@@ -1216,7 +1216,7 @@ export const WEAPON_STATS = {
     weight: 10,
     ammo: "71",
   },
-  Python: {
+  "Python": {
     damage_max: 45,
     damage_min: 35,
     damage_falloff_start: 30,
@@ -1296,7 +1296,7 @@ export const WEAPON_STATS = {
     weight: 10,
     ammo: "5+1",
   },
-  RFB: {
+  "RFB": {
     damage_max: 45,
     damage_min: 34,
     damage_falloff_start: 250,
@@ -1316,7 +1316,7 @@ export const WEAPON_STATS = {
     weight: 10,
     ammo: "20+1",
   },
-  RPK: {
+  "RPK": {
     damage_max: 35,
     damage_min: 26,
     damage_falloff_start: 175,
@@ -1356,7 +1356,7 @@ export const WEAPON_STATS = {
     weight: 22,
     ammo: "45+1",
   },
-  Saddlegun: {
+  "Saddlegun": {
     damage_max: 55,
     damage_min: 22,
     damage_falloff_start: 60,
@@ -1376,7 +1376,7 @@ export const WEAPON_STATS = {
     weight: 4,
     ammo: "8",
   },
-  XM7: {
+  "XM7": {
     damage_max: 65,
     damage_min: 50,
     damage_falloff_start: 300,
@@ -1416,7 +1416,7 @@ export const WEAPON_STATS = {
     weight: 6,
     ammo: "30+1",
   },
-  SKS: {
+  "SKS": {
     damage_max: 40,
     damage_min: 30,
     damage_falloff_start: 175,
@@ -1516,7 +1516,7 @@ export const WEAPON_STATS = {
     weight: 9,
     ammo: "10+1",
   },
-  TMP: {
+  "TMP": {
     damage_max: 18,
     damage_min: 9,
     damage_falloff_start: 100,
@@ -1636,7 +1636,7 @@ export const WEAPON_STATS = {
     weight: 2,
     ammo: "12+1",
   },
-  Uzi: {
+  "Uzi": {
     damage_max: 25,
     damage_min: 20,
     damage_falloff_start: 100,
@@ -1676,7 +1676,7 @@ export const WEAPON_STATS = {
     weight: 7,
     ammo: "20+1",
   },
-  RMK2: {
+  "RMK2": {
     damage_max: 6,
     damage_min: 4,
     damage_falloff_start: 50,
@@ -1818,7 +1818,7 @@ export const WEAPON_STATS = {
     weight: 16,
     ammo: "2",
   },
-  Fail: {
+  "Fail": {
     damage_max: 5,
     damage_min: 4,
     damage_falloff_start: 200,
@@ -2000,7 +2000,7 @@ export const WEAPON_STATS = {
     weight: 8,
     ammo: "50+1",
   },
-  M14A: {
+  "M14A": {
     damage_max: 55,
     damage_min: 40,
     damage_falloff_start: 175,
@@ -2082,7 +2082,7 @@ export const WEAPON_STATS = {
     weight: 10,
     ammo: "60",
   },
-  Olympia: {
+  "Olympia": {
     damage_max: 95,
     damage_min: 40,
     pellet_count: 1,
@@ -2103,7 +2103,7 @@ export const WEAPON_STATS = {
     weight: 12,
     ammo: "2",
   },
-  PP2000: {
+  "PP2000": {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -2306,7 +2306,7 @@ export const WEAPON_STATS = {
     weight: 12,
     ammo: "14",
   },
-  WA2000: {
+  "WA2000": {
     damage_max: 80,
     damage_min: 60,
     damage_falloff_start: 300,
