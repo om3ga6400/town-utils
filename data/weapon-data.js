@@ -694,7 +694,7 @@ export const WEAPON_STATS = {
     weight: 12,
     ammo: "8",
   },
-  "M16A1": {
+  M16A1: {
     damage_max: 20,
     damage_min: 16,
     damage_falloff_start: 130,
@@ -975,7 +975,7 @@ export const WEAPON_STATS = {
     weight: 12,
     ammo: "20+1",
   },
-  "MK18": {
+  MK18: {
     damage_max: 40,
     damage_min: 30,
     damage_falloff_start: 150,
@@ -1376,7 +1376,7 @@ export const WEAPON_STATS = {
     weight: 4,
     ammo: "8",
   },
-  "XM7": {
+  XM7: {
     damage_max: 65,
     damage_min: 50,
     damage_falloff_start: 300,
@@ -2000,7 +2000,7 @@ export const WEAPON_STATS = {
     weight: 8,
     ammo: "50+1",
   },
-  "M14A": {
+  M14A: {
     damage_max: 55,
     damage_min: 40,
     damage_falloff_start: 175,
