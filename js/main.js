@@ -94,7 +94,7 @@ const render = () => {
   const [left, right] = [WEAPON_STATS[ln], WEAPON_STATS[rn]];
   const time = parseFloat(dpsTime.value) || 10;
   const mult = dpsMultiplier.value;
-  const pelletPct = parseFloat(pelletHitPercent.value) || 100;
+  const pelletPct = isNaN(parseFloat(pelletHitPercent.value)) ? 100 : parseFloat(pelletHitPercent.value);
 
   const classRow = `<div class="stat-row">
     <div>${getWeaponClass(ln)}</div>
@@ -141,7 +141,7 @@ const renderSearch = () => {
       name: w,
       value:
         statKey === "dps"
-          ? calcDPS(w, parseFloat(dpsTime.value) || 10, dpsMultiplier.value, parseFloat(pelletHitPercent.value) || 100)
+          ? calcDPS(w, parseFloat(dpsTime.value) || 10, dpsMultiplier.value, isNaN(parseFloat(pelletHitPercent.value)) ? 100 : parseFloat(pelletHitPercent.value))
           : (WEAPON_STATS[w]?.[statKey] ?? null),
     }))
     .filter((w) => w.value !== null)
