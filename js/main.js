@@ -34,6 +34,7 @@ const searchResults = $("search-results");
 const dpsRow = document.querySelector(".dps-row");
 const dpsTime = $("dps-time");
 const dpsMultiplier = $("dps-multiplier");
+const pelletHitPercent = $("pellet-hit-percent");
 
 const parseAmmo = (v) => {
   if (v === "inf") return Infinity;
@@ -45,20 +46,23 @@ const parseAmmo = (v) => {
 /*
  * DPS Formula:
  * rps = firerate / 60
+ * pelletMult = pellet_count ? (pellet_count * pelletHitPercent / 100) : 1
+ * damage = damage_max * [head|torso|limb]_multiplier * pelletMult
  * magTime = ammo / rps
  * cycleTime = magTime + reload_speed_empty
  * fullCycles = floor(time / cycleTime)
  * remaining = time - fullCycles * cycleTime
  * remainingShots = min(ammo, floor(remaining * rps))
  * totalShots = fullCycles * ammo + remainingShots
- * totalDamage = totalShots * damage_max * [head|torso|limb]_multiplier
+ * totalDamage = totalShots * damage
  * DPS = totalDamage / time
  */
-const calcDPS = (w, time = 10, multType = "none") => {
+const calcDPS = (w, time = 10, multType = "none", pelletHitPct = 100) => {
   const s = WEAPON_STATS[w];
   if (!s) return null;
   const mult = multType === "none" ? 1 : (s[multType + "_multiplier"] ?? 1);
-  const damage = s.damage_max * mult;
+  const pelletMult = s.pellet_count ? (s.pellet_count * pelletHitPct / 100) : 1;
+  const damage = s.damage_max * mult * pelletMult;
   const ammo = parseAmmo(s.ammo);
   const rps = s.firerate / 60;
   
@@ -78,21 +82,47 @@ const getClass = (a, b, higher) => {
   return (higher ? a > b : a < b) ? "better" : "worse";
 };
 
+const getWeaponClass = (weaponName) => {
+  for (const [className, data] of Object.entries(WEAPON_CATEGORIES)) {
+    if (data.weapons.includes(weaponName)) return className;
+  }
+  return "Unknown";
+};
+
 const render = () => {
   const [ln, rn] = [selectLeft.value, selectRight.value];
   const [left, right] = [WEAPON_STATS[ln], WEAPON_STATS[rn]];
   const time = parseFloat(dpsTime.value) || 10;
   const mult = dpsMultiplier.value;
+  const pelletPct = parseFloat(pelletHitPercent.value) || 100;
 
-  output.innerHTML = STATS.map(({ key, label, higher, computed }) => {
-    const lv = computed ? calcDPS(ln, time, mult) : (left?.[key] ?? "—");
-    const rv = computed ? calcDPS(rn, time, mult) : (right?.[key] ?? "—");
+  const classRow = `<div class="stat-row">
+    <div>${getWeaponClass(ln)}</div>
+    <div>Class</div>
+    <div>${getWeaponClass(rn)}</div>
+  </div>`;
+
+  const statsRows = STATS.map(({ key, label, higher, computed }) => {
+    const lv = computed ? calcDPS(ln, time, mult, pelletPct) : (left?.[key] ?? "—");
+    const rv = computed ? calcDPS(rn, time, mult, pelletPct) : (right?.[key] ?? "—");
+    const lvNum = key === "ammo" ? parseAmmo(lv) : +lv;
+    const rvNum = key === "ammo" ? parseAmmo(rv) : +rv;
     return `<div class="stat-row">
-      <div class="${getClass(+lv, +rv, higher)}">${lv}</div>
+      <div class="${getClass(lvNum, rvNum, higher)}">${lv}</div>
       <div>${label}</div>
-      <div class="${getClass(+rv, +lv, higher)}">${rv}</div>
+      <div class="${getClass(rvNum, lvNum, higher)}">${rv}</div>
     </div>`;
   }).join("");
+
+  const lPellets = left?.pellet_count ?? 1;
+  const rPellets = right?.pellet_count ?? 1;
+  const pelletRow = `<div class="stat-row">
+    <div class="${getClass(lPellets, rPellets, true)}">${lPellets}</div>
+    <div>Pellet count</div>
+    <div class="${getClass(rPellets, lPellets, true)}">${rPellets}</div>
+  </div>`;
+
+  output.innerHTML = classRow + statsRows + pelletRow;
 };
 
 const renderSearch = () => {
@@ -111,7 +141,7 @@ const renderSearch = () => {
       name: w,
       value:
         statKey === "dps"
-          ? calcDPS(w, parseFloat(dpsTime.value) || 10, dpsMultiplier.value)
+          ? calcDPS(w, parseFloat(dpsTime.value) || 10, dpsMultiplier.value, parseFloat(pelletHitPercent.value) || 100)
           : (WEAPON_STATS[w]?.[statKey] ?? null),
     }))
     .filter((w) => w.value !== null)
@@ -148,15 +178,18 @@ sortStat.innerHTML = STATS.map(
 ).join("");
 
 dpsRow.style.display = "flex";
+dpsMultiplier.style.display = "block";
 
 // Events
 selectLeft.onchange = selectRight.onchange = render;
 sortStat.onchange = () => {
-  dpsRow.style.display = sortStat.value === "dps" ? "flex" : "none";
+  const show = sortStat.value === "dps";
+  dpsRow.style.display = show ? "flex" : "none";
+  dpsMultiplier.style.display = show ? "block" : "none";
   renderSearch();
 };
 searchInput.oninput = classFilter.onchange = sortOrder.onchange = renderSearch;
-dpsTime.oninput = dpsMultiplier.onchange = () => { render(); renderSearch(); };
+dpsTime.oninput = dpsMultiplier.onchange = pelletHitPercent.oninput = () => { render(); renderSearch(); };
 searchResults.onclick = (e) => {
   const row = e.target.closest(".result-row");
   if (row) {

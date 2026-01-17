@@ -103,27 +103,27 @@ Zip .22
 */
 
 export const WEAPON_CATEGORIES = {
-  Rifles: {
+  Rifle: {
     type: "rifle",
     weapons: ["AK-15", "AK-47", "AR-10", "AR-15", "AUG A3", "Bryson Repeater", "FAMAS G2", "G36C", "G3A3", "HK416", "Honey Badger", "HW Spear", "L85A2", "M1 Garand", "M14A", "M16A1", "M16A2", "M4 Carbine", "MCX LVAW", "MK18", "MK 17 CQC", "RFB", "Saddlegun", "SKS", "SOPMOD Block II", "FN FAL", "Groza-4", "SCAR-H", "SCAR-L", "SR-3M Vikhr", "ShAK-12", "SG-552 Commando", "VSS Vintorez", "XM7"],
   },
-  SMGs: {
+  SMG: {
     type: "smg",
     weapons: ["AS VAL", "HW Jolt", "MP40", "MP5A2", "MP5K", "MP7", "MPX", "P90", "PPSH-41", "SR-2M", "TMP", "UMP-45", "Uzi", "PP2000", "KRISS Vector", "Scorpion EVO", "M950 Helical"],
   },
-  Snipers: {
+  Sniper: {
     type: "sniper",
     weapons: ["Dragunov SVD", "GM6 Lynx", "Intervention", "JNG-90", "L96A1", "Lee Enfield", "MK-11", "QBU-88", "QBZ-95", "R700 Hunter", "Steyr Elite", "Barrett M82A3", "WA2000"],
   },
-  Shotguns: {
+  Shotgun: {
     type: "shotgun",
     weapons: ["Pipe Shotgun", "M870", "M37 Featherweight", "Double Barrel", "HW Pulper", "Ithaca 37 Stakeout", "M26 MASS", "Olympia", "Saiga 12K", "SPAS-12", "UTS-15"],
   },
-  LMGs: {
+  LMG: {
     type: "rifle",
     weapons: ["Lewis Automatic Rifle", "MG4", "RPK", "RPK-74", "M1921 Thompson"],
   },
-  Pistols: {
+  Pistol: {
     type: "pistol",
     weapons: ["AG-19", "CZ-75", "Desert Eagle", "Desert Eagle XIX", "Five SeveN", "HW Cappa", "M1911", "M9", "MAC-10", "Magnum Revolver", "Makarov", "MP443", "P226", "Python", "RMK2", "USP Match", "USP MK23", "WA M99", "Cowboy Gun", "Luger P08", "UNICA 6", "SW 500"],
   },
