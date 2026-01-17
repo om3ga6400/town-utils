@@ -48,11 +48,19 @@ const parseAmmo = (v) => {
  * rps = firerate / 60
  * pelletMult = pellet_count ? (pellet_count * pelletHitPercent / 100) : 1
  * damage = damage_max * [head|torso|limb]_multiplier * pelletMult
- * magTime = ammo / rps
- * cycleTime = magTime + reload_speed_empty
+ * shotInterval = 1 / rps (time between shots)
+ * magTime = (ammo - 1) / rps (first shot is instant, remaining shots follow fire rate)
+ * 
+ * For standard reload:
+ *   reloadTime = reload_speed_empty
+ * 
+ * For per-bullet reload (reload_per_bullet = true):
+ *   reloadTime = ammo * reload_speed_empty
+ * 
+ * cycleTime = magTime + reloadTime
  * fullCycles = floor(time / cycleTime)
  * remaining = time - fullCycles * cycleTime
- * remainingShots = min(ammo, floor(remaining * rps))
+ * remainingShots = min(ammo, 1 + floor(remaining * rps))  // First shot instant
  * totalShots = fullCycles * ammo + remainingShots
  * totalDamage = totalShots * damage
  * DPS = totalDamage / time
@@ -66,13 +74,17 @@ const calcDPS = (w, time = 10, multType = "none", pelletHitPct = 100) => {
   const ammo = parseAmmo(s.ammo);
   const rps = s.firerate / 60;
   
-  // Infinite ammo = no reloads, just continuous fire
-  if (ammo === Infinity) return Math.round(rps * damage);
+  // Infinite ammo = no reloads, just continuous fire (first shot instant + continuous)
+  if (ammo === Infinity) return Math.round((1 + time * rps) * damage / time);
   
-  const cycleTime = ammo / rps + s.reload_speed_empty;
+  // Per-bullet reload: reload time = ammo * reload_speed_empty
+  const reloadTime = s.reload_per_bullet ? ammo * s.reload_speed_empty : s.reload_speed_empty;
+  // First shot is instant, so mag time is (ammo - 1) / rps
+  const cycleTime = (ammo - 1) / rps + reloadTime;
   const fullCycles = Math.floor(time / cycleTime);
   const remaining = time - fullCycles * cycleTime;
-  const remainingShots = Math.min(ammo, Math.floor(remaining * rps));
+  // First shot is instant, then subsequent shots follow fire rate
+  const remainingShots = Math.min(ammo, 1 + Math.floor(remaining * rps));
   return Math.round(((fullCycles * ammo + remainingShots) * damage) / time);
 };
 

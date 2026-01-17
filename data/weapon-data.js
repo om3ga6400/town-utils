@@ -1,6 +1,7 @@
 /* ========== WEAPON LIST ==========
 AK-15
 AK-47
+AG-18C
 AG-19
 AR-10
 AR-15
@@ -125,7 +126,7 @@ export const WEAPON_CATEGORIES = {
   },
   Pistol: {
     type: "pistol",
-    weapons: ["AG-19", "CZ-75", "Desert Eagle", "Desert Eagle XIX", "Five SeveN", "HW Cappa", "M1911", "M9", "MAC-10", "Magnum Revolver", "Makarov", "MP443", "P226", "Python", "RMK2", "USP Match", "USP MK23", "WA M99", "Cowboy Gun", "Luger P08", "UNICA 6", "SW 500"],
+    weapons: ["AG-18C", "AG-19", "CZ-75", "Desert Eagle", "Desert Eagle XIX", "Five SeveN", "HW Cappa", "M1911", "M9", "MAC-10", "Magnum Revolver", "Makarov", "MP443", "P226", "Python", "RMK2", "USP Match", "USP MK23", "WA M99", "Cowboy Gun", "Luger P08", "UNICA 6", "SW 500"],
   },
   Special: {
     type: "special",
@@ -173,6 +174,26 @@ export const WEAPON_STATS = {
     aim_speed: 0.25,
     weight: 8,
     ammo: "30+1",
+  },
+  "AG-18C": {
+    damage_max: 20,
+    damage_min: 10,
+    damage_falloff_start: 100,
+    max_bullet_range: 250,
+    firerate: 950,
+    hip_fire_accuracy: 55,
+    ads_accuracy: 110,
+    vertical_recoil: 0.45,
+    horizontal_recoil: 0.25,
+    head_multiplier: 8,
+    torso_multiplier: 1.2,
+    limb_multiplier: 0.5,
+    reload_speed_partial: 2.45,
+    reload_speed_empty: 2.95,
+    equip_speed: 0.6,
+    aim_speed: 0.15,
+    weight: 2.25,
+    ammo: "24+1",
   },
   "AG-19": {
     damage_max: 20,
@@ -289,6 +310,7 @@ export const WEAPON_STATS = {
     limb_multiplier: 1.1,
     reload_speed_partial: 0.78,
     reload_speed_empty: 0.78,
+    reload_per_bullet: true,
     equip_speed: 0.4,
     aim_speed: 0.2,
     weight: 8,
@@ -830,6 +852,7 @@ export const WEAPON_STATS = {
     limb_multiplier: 0.75,
     reload_speed_partial: 0.75,
     reload_speed_empty: 0.75,
+    reload_per_bullet: true,
     equip_speed: 0.6,
     aim_speed: 0.35,
     weight: 10,
@@ -1371,6 +1394,7 @@ export const WEAPON_STATS = {
     limb_multiplier: 0.5,
     reload_speed_partial: 0.55,
     reload_speed_empty: 0.55,
+    reload_per_bullet: true,
     equip_speed: 0.4,
     aim_speed: 0.2,
     weight: 4,
@@ -1431,6 +1455,7 @@ export const WEAPON_STATS = {
     limb_multiplier: 0.8,
     reload_speed_partial: 0.27,
     reload_speed_empty: 0.27,
+    reload_per_bullet: true,
     equip_speed: 0.6,
     aim_speed: 0.25,
     weight: 8.5,
@@ -1935,6 +1960,7 @@ export const WEAPON_STATS = {
     limb_multiplier: 0.9,
     reload_speed_partial: 0.55,
     reload_speed_empty: 0.55,
+    reload_per_bullet: true,
     equip_speed: 0.4,
     aim_speed: 0.25,
     weight: 6,
@@ -2057,6 +2083,7 @@ export const WEAPON_STATS = {
     limb_multiplier: 0.8,
     reload_speed_partial: 0.65,
     reload_speed_empty: 0.65,
+    reload_per_bullet: true,
     equip_speed: 0.6,
     aim_speed: 0.3,
     weight: 10,
@@ -2240,6 +2267,7 @@ export const WEAPON_STATS = {
     limb_multiplier: 0.5,
     reload_speed_partial: 1,
     reload_speed_empty: 1,
+    reload_per_bullet: true,
     equip_speed: 0.6,
     aim_speed: 0.35,
     weight: 12,
@@ -2301,6 +2329,7 @@ export const WEAPON_STATS = {
     limb_multiplier: 0.5,
     reload_speed_partial: 0.85,
     reload_speed_empty: 0.85,
+    reload_per_bullet: true,
     equip_speed: 0.6,
     aim_speed: 0.35,
     weight: 12,
