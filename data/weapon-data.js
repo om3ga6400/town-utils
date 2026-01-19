@@ -121,7 +121,7 @@ Zip .22
 export const WEAPON_CATEGORIES = {
   Rifle: {
     type: "rifle",
-    weapons: ["AK-15", "AK-47", "AR-10", "AR-15", "AUG A3", "Bryson Repeater", "FAMAS G2", "G36C", "G3A3", "HK416", "Honey Badger", "HW Spear", "L85A2", "M1 Garand", "M14A", "M16A1", "M16A2", "M4 Carbine", "MCX LVAW", "MK18", "MK 17 CQC", "RFB", "Saddlegun", "SKS", "SOPMOD Block II", "FN FAL", "FN FAL Wood", "Groza-4", "SCAR-H", "SCAR-L", "SR-3M Vikhr", "ShAK-12", "SG-552 Commando", "VSS Vintorez", "XM7"],
+    weapons: ["AK-15", "AK-47", "AR-10", "AR-15", "AUG A3", "Bryson Repeater", "CQ300 Lynx", "FAMAS G2", "G36C", "G3A3", "HK416", "Honey Badger", "HW Spear", "L85A2", "M1 Garand", "M14A", "M16A1", "M16A2", "M4 Carbine", "MCX LVAW", "MK18", "MK 17 CQC", "RFB", "Saddlegun", "SKS", "SOPMOD Block II", "FN FAL", "FN FAL Wood", "Groza-4", "SCAR-H", "SCAR-L", "SR-3M Vikhr", "ShAK-12", "SG-552 Commando", "VSS Vintorez", "XM7"],
   },
   SMG: {
     type: "smg",
@@ -137,11 +137,11 @@ export const WEAPON_CATEGORIES = {
   },
   LMG: {
     type: "rifle",
-    weapons: ["Lewis Automatic Rifle", "MG4", "RPK", "RPK-74", "M1921 Thompson"],
+    weapons: ["Colt LMG", "Lewis Automatic Rifle", "MG4", "RPK", "RPK-74", "M1921 Thompson"],
   },
   Pistol: {
     type: "pistol",
-    weapons: ["AG-18C", "AG-19", "CZ-75", "Desert Eagle", "Desert Eagle XIX", "Five SeveN", "HW Cappa", "M1911", "M9", "MAC-10", "Magnum Revolver", "Makarov", "MP443", "P226", "Python", "RMK2", "Speed-Six", "USP Match", "USP MK23", "WA M99", "Cowboy Gun", "Luger P08", "UNICA 6", "SW 500"],
+    weapons: ["AG-18C", "AG-19", "CZ-75", "Desert Eagle", "Desert Eagle XIX", "Five SeveN", "HW Cappa", "M1911", "M9", "MAC-10", "Magnum Revolver", "Makarov", "MP443", "P226", "Python", "RMK2", "Speed-Six", "USP Match", "USP MK23", "WA M99", "Cowboy Gun", "Luger P08", "UNICA 6", "SW 500", "Zip .22"],
   },
   Special: {
     type: "special",
