@@ -1,8 +1,8 @@
 /* ========== WEAPON LIST ==========
-AK-15
-AK-47
 AG-18C
 AG-19
+AK-15
+AK-47
 AR-10
 AR-15
 AS VAL
@@ -10,6 +10,7 @@ AUG A3
 Bryson Repeater
 CZ-75
 Desert Eagle
+Desert Eagle XIX
 Dragunov SVD
 FAMAS G2
 Five SeveN
@@ -27,11 +28,15 @@ L96A1
 Lee Enfield
 Lewis Automatic Rifle
 M1 Garand
+M14A
+M16A1
 M16A2
 M1911
+M37 Featherweight
 M4 Carbine
-M9
 M870
+M9
+M950 Helical
 MAC-10
 Magnum Revolver
 Makarov
@@ -39,6 +44,7 @@ MCX LVAW
 MG4
 MK 17 CQC
 MK-11
+MK18
 Model 1777 Musket
 MP40
 MP443
@@ -49,27 +55,33 @@ MPX
 P226
 P90
 Pipe Shotgun
-PPSH-41
+PPSh-41
 Python
 QBU-88
 QBZ-95
 R700 Hunter
 RFB
+RMK2
 RPK
 RPK-74
 Saddlegun
+SCAR-L
 SG-552 Commando
 SKS
 SOPMOD Block II
+Speed-Six
 SR-2M
+SR-3M Vikhr
 Steyr Elite
+SW 500
 TMP
 Tumor Growth
 UMP-45
 USP Match
 USP MK23
 Uzi
-RMK2
+WA M99
+XM7
 
 ========== GAMEPASS GUNS ==========
 
@@ -81,11 +93,13 @@ CQ300 Lynx
 Double Barrel
 Fail
 FN FAL
-Groza-4
+FN FAL Wood
 GM6 Lynx
+Groza-4
 HW Pulper
 Ithaca 37 Stakeout
 KRISS Vector
+Kriss Vector Gen2
 Luger P08
 M1921 Thompson
 M26 MASS
@@ -99,6 +113,7 @@ ShAK-12
 SPAS-12
 UNICA 6
 UTS-15
+VSS Vintorez
 WA2000
 Zip .22
 */
@@ -106,11 +121,11 @@ Zip .22
 export const WEAPON_CATEGORIES = {
   Rifle: {
     type: "rifle",
-    weapons: ["AK-15", "AK-47", "AR-10", "AR-15", "AUG A3", "Bryson Repeater", "FAMAS G2", "G36C", "G3A3", "HK416", "Honey Badger", "HW Spear", "L85A2", "M1 Garand", "M14A", "M16A1", "M16A2", "M4 Carbine", "MCX LVAW", "MK18", "MK 17 CQC", "RFB", "Saddlegun", "SKS", "SOPMOD Block II", "FN FAL", "Groza-4", "SCAR-H", "SCAR-L", "SR-3M Vikhr", "ShAK-12", "SG-552 Commando", "VSS Vintorez", "XM7"],
+    weapons: ["AK-15", "AK-47", "AR-10", "AR-15", "AUG A3", "Bryson Repeater", "FAMAS G2", "G36C", "G3A3", "HK416", "Honey Badger", "HW Spear", "L85A2", "M1 Garand", "M14A", "M16A1", "M16A2", "M4 Carbine", "MCX LVAW", "MK18", "MK 17 CQC", "RFB", "Saddlegun", "SKS", "SOPMOD Block II", "FN FAL", "FN FAL Wood", "Groza-4", "SCAR-H", "SCAR-L", "SR-3M Vikhr", "ShAK-12", "SG-552 Commando", "VSS Vintorez", "XM7"],
   },
   SMG: {
     type: "smg",
-    weapons: ["AS VAL", "HW Jolt", "MP40", "MP5A2", "MP5K", "MP7", "MPX", "P90", "PPSH-41", "SR-2M", "TMP", "UMP-45", "Uzi", "PP2000", "KRISS Vector", "Scorpion EVO", "M950 Helical"],
+    weapons: ["AS VAL", "HW Jolt", "MP40", "MP5A2", "MP5K", "MP7", "MPX", "P90", "PPSH-41", "SR-2M", "TMP", "UMP-45", "Uzi", "PP2000", "KRISS Vector", "Kriss Vector Gen2", "Scorpion EVO", "M950 Helical"],
   },
   Sniper: {
     type: "sniper",
@@ -126,7 +141,7 @@ export const WEAPON_CATEGORIES = {
   },
   Pistol: {
     type: "pistol",
-    weapons: ["AG-18C", "AG-19", "CZ-75", "Desert Eagle", "Desert Eagle XIX", "Five SeveN", "HW Cappa", "M1911", "M9", "MAC-10", "Magnum Revolver", "Makarov", "MP443", "P226", "Python", "RMK2", "USP Match", "USP MK23", "WA M99", "Cowboy Gun", "Luger P08", "UNICA 6", "SW 500"],
+    weapons: ["AG-18C", "AG-19", "CZ-75", "Desert Eagle", "Desert Eagle XIX", "Five SeveN", "HW Cappa", "M1911", "M9", "MAC-10", "Magnum Revolver", "Makarov", "MP443", "P226", "Python", "RMK2", "Speed-Six", "USP Match", "USP MK23", "WA M99", "Cowboy Gun", "Luger P08", "UNICA 6", "SW 500"],
   },
   Special: {
     type: "special",
@@ -721,6 +736,26 @@ export const WEAPON_STATS = {
     damage_min: 16,
     damage_falloff_start: 130,
     max_bullet_range: 375,
+    firerate: 833.33,
+    hip_fire_accuracy: 90,
+    ads_accuracy: 270,
+    vertical_recoil: 0.29,
+    horizontal_recoil: 0.36,
+    head_multiplier: 6,
+    torso_multiplier: 1,
+    limb_multiplier: 1,
+    reload_speed_partial: 2,
+    reload_speed_empty: 2.75,
+    equip_speed: 0.6,
+    aim_speed: 0.18,
+    weight: 8,
+    ammo: "20+1",
+  },
+  "M16A2": {
+    damage_max: 20,
+    damage_min: 16,
+    damage_falloff_start: 130,
+    max_bullet_range: 375,
     firerate: 750,
     hip_fire_accuracy: 90,
     ads_accuracy: 270,
@@ -735,26 +770,6 @@ export const WEAPON_STATS = {
     aim_speed: 0.25,
     weight: 8,
     ammo: "30+1",
-  },
-  "M16A2": {
-    damage_max: 20,
-    damage_min: 16,
-    damage_falloff_start: 130,
-    max_bullet_range: 375,
-    firerate: 800,
-    hip_fire_accuracy: 90,
-    ads_accuracy: 270,
-    vertical_recoil: 0.29,
-    horizontal_recoil: 0.36,
-    head_multiplier: 6,
-    torso_multiplier: 1.7,
-    limb_multiplier: 1,
-    reload_speed_partial: 2,
-    reload_speed_empty: 2.75,
-    equip_speed: 0.5,
-    aim_speed: 0.25,
-    weight: 8,
-    ammo: "20+1",
   },
   "M1911": {
     damage_max: 25,
@@ -806,14 +821,14 @@ export const WEAPON_STATS = {
     ads_accuracy: 122.5,
     vertical_recoil: 0.3,
     horizontal_recoil: 0.3,
-    head_multiplier: 4,
-    torso_multiplier: 0.8,
-    limb_multiplier: 0.5,
+    head_multiplier: 8,
+    torso_multiplier: 1.6,
+    limb_multiplier: 1,
     reload_speed_partial: 3,
     reload_speed_empty: 4,
-    equip_speed: 0.6,
-    aim_speed: 0.18,
-    weight: 8,
+    equip_speed: 0.4,
+    aim_speed: 0.1,
+    weight: 5,
     ammo: "50+1",
   },
   "M9": {
@@ -1416,8 +1431,8 @@ export const WEAPON_STATS = {
     reload_speed_partial: 3.25,
     reload_speed_empty: 3.75,
     equip_speed: 0.6,
-    aim_speed: 0.24,
-    weight: 10,
+    aim_speed: 0.38,
+    weight: 13,
     ammo: "20+1",
   },
   "SG-552 Commando": {
@@ -1507,9 +1522,9 @@ export const WEAPON_STATS = {
     damage_falloff_start: 85,
     max_bullet_range: 190,
     firerate: 865,
-    hip_fire_accuracy: 125,
-    ads_accuracy: 225,
-    vertical_recoil: 0.25,
+    hip_fire_accuracy: 55,
+    ads_accuracy: 170.5,
+    vertical_recoil: 0.3,
     horizontal_recoil: 0.33,
     head_multiplier: 5.5,
     torso_multiplier: 0.78,
@@ -1518,7 +1533,7 @@ export const WEAPON_STATS = {
     reload_speed_empty: 3.65,
     equip_speed: 0.45,
     aim_speed: 0.25,
-    weight: 7,
+    weight: 6,
     ammo: "30+1",
   },
   "Steyr Elite": {
@@ -1769,37 +1784,37 @@ export const WEAPON_STATS = {
     max_bullet_range: 350,
     firerate: 750,
     hip_fire_accuracy: 70,
-    ads_accuracy: 122.5,
-    vertical_recoil: 0.3,
-    horizontal_recoil: 0.3,
+    ads_accuracy: 190,
+    vertical_recoil: 0.28,
+    horizontal_recoil: 0.34,
     head_multiplier: 4,
     torso_multiplier: 0.8,
     limb_multiplier: 0.5,
     reload_speed_partial: 4,
     reload_speed_empty: 4.5,
     equip_speed: 0.6,
-    aim_speed: 0.18,
-    weight: 8,
+    aim_speed: 0.39,
+    weight: 11,
     ammo: "60+1",
   },
   "CQ300 Lynx": {
-    damage_max: 33,
-    damage_min: 20,
-    damage_falloff_start: 150,
-    max_bullet_range: 275,
+    damage_max: 30,
+    damage_min: 15,
+    damage_falloff_start: 130,
+    max_bullet_range: 230,
     firerate: 820,
-    hip_fire_accuracy: 85,
-    ads_accuracy: 191.25,
-    vertical_recoil: 0.28,
-    horizontal_recoil: 0.34,
+    hip_fire_accuracy: 70,
+    ads_accuracy: 147,
+    vertical_recoil: 0.3,
+    horizontal_recoil: 0.56,
     head_multiplier: 4,
-    torso_multiplier: 1.1,
-    limb_multiplier: 1,
-    reload_speed_partial: 2.4,
-    reload_speed_empty: 2.9,
+    torso_multiplier: 1,
+    limb_multiplier: 0.8,
+    reload_speed_partial: 2.3,
+    reload_speed_empty: 3.3,
     equip_speed: 0.6,
-    aim_speed: 0.18,
-    weight: 8,
+    aim_speed: 0.11,
+    weight: 5.5,
     ammo: "30+1",
   },
   "Cowboy Gun": {
@@ -1881,7 +1896,27 @@ export const WEAPON_STATS = {
     equip_speed: 0.75,
     aim_speed: 0.45,
     weight: 15,
-    ammo: "20+1",
+    ammo: "30+1",
+  },
+  "FN FAL Wood": {
+    damage_max: 60,
+    damage_min: 25,
+    damage_falloff_start: 225,
+    max_bullet_range: 400,
+    firerate: 500,
+    hip_fire_accuracy: 150,
+    ads_accuracy: 300,
+    vertical_recoil: 0.41,
+    horizontal_recoil: 0.8,
+    head_multiplier: 4,
+    torso_multiplier: 0.8,
+    limb_multiplier: 0.5,
+    reload_speed_partial: 3,
+    reload_speed_empty: 4,
+    equip_speed: 0.75,
+    aim_speed: 0.45,
+    weight: 15,
+    ammo: "30+1",
   },
   "Groza-4": {
     damage_max: 40,
@@ -1986,6 +2021,26 @@ export const WEAPON_STATS = {
     weight: 8,
     ammo: "33+1",
   },
+  "Kriss Vector Gen2": {
+    damage_max: 20,
+    damage_min: 10,
+    damage_falloff_start: 100,
+    max_bullet_range: 225,
+    firerate: 1000,
+    hip_fire_accuracy: 60,
+    ads_accuracy: 120,
+    vertical_recoil: 0.29,
+    horizontal_recoil: 0.72,
+    head_multiplier: 8,
+    torso_multiplier: 1.5,
+    limb_multiplier: 0.5,
+    reload_speed_partial: 2.4,
+    reload_speed_empty: 3,
+    equip_speed: 0.4,
+    aim_speed: 0.2,
+    weight: 4,
+    ammo: "33+1",
+  },
   "Luger P08": {
     damage_max: 20,
     damage_min: 15,
@@ -2033,7 +2088,7 @@ export const WEAPON_STATS = {
     max_bullet_range: 450,
     firerate: 180.18,
     hip_fire_accuracy: 118,
-    ads_accuracy: 206.5,
+    ads_accuracy: 295,
     vertical_recoil: 0.75,
     horizontal_recoil: 0.75,
     head_multiplier: 4,
@@ -2085,8 +2140,8 @@ export const WEAPON_STATS = {
     reload_speed_empty: 0.65,
     reload_per_bullet: true,
     equip_speed: 0.6,
-    aim_speed: 0.3,
-    weight: 10,
+    aim_speed: 0.36,
+    weight: 12,
     ammo: "6",
   },
   "Nail Gun": {
@@ -2272,6 +2327,26 @@ export const WEAPON_STATS = {
     aim_speed: 0.35,
     weight: 12,
     ammo: "8",
+  },
+  "Speed-Six": {
+    damage_max: 65,
+    damage_min: 15,
+    damage_falloff_start: 35,
+    max_bullet_range: 150,
+    firerate: 140,
+    hip_fire_accuracy: 50,
+    ads_accuracy: 110,
+    vertical_recoil: 0.8,
+    horizontal_recoil: 0.8,
+    head_multiplier: 5,
+    torso_multiplier: 2.5,
+    limb_multiplier: 0.75,
+    reload_speed_partial: 3,
+    reload_speed_empty: 3,
+    equip_speed: 0.4,
+    aim_speed: 0.15,
+    weight: 2.4,
+    ammo: "6",
   },
   "UNICA 6": {
     damage_max: 52,
