@@ -11,12 +11,18 @@ const STATS = [
   { key: "ads_accuracy", label: "ADS accuracy", higher: true },
   { key: "vertical_recoil", label: "Vertical recoil" },
   { key: "horizontal_recoil", label: "Horizontal recoil" },
+  { key: "head_multiplier", label: "Head multiplier", higher: true },
+  { key: "torso_multiplier", label: "Torso multiplier", higher: true },
+  { key: "limb_multiplier", label: "Limb multiplier", higher: true },
   { key: "reload_speed_partial", label: "Reload (partial)" },
   { key: "reload_speed_empty", label: "Reload (empty)" },
   { key: "equip_speed", label: "Equip speed" },
   { key: "aim_speed", label: "Aim speed" },
   { key: "weight", label: "Weight" },
   { key: "ammo", label: "Ammo", higher: true },
+  { key: "pellet_count", label: "Pellet count", higher: true },
+  { key: "reload_per_bullet", label: "Reload per bullet" },
+  { key: "game_pass", label: "Game Pass" },
 ];
 
 const weapons = Object.keys(WEAPON_STATS).sort();
@@ -126,15 +132,7 @@ const render = () => {
     </div>`;
   }).join("");
 
-  const lPellets = left?.pellet_count ?? 1;
-  const rPellets = right?.pellet_count ?? 1;
-  const pelletRow = `<div class="stat-row">
-    <div class="${getClass(lPellets, rPellets, true)}">${lPellets}</div>
-    <div>Pellet count</div>
-    <div class="${getClass(rPellets, lPellets, true)}">${rPellets}</div>
-  </div>`;
-
-  output.innerHTML = classRow + statsRows + pelletRow;
+  output.innerHTML = classRow + statsRows;
 };
 
 const renderSearch = () => {
