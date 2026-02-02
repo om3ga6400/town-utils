@@ -121,7 +121,44 @@ Zip .22
 export const WEAPON_CATEGORIES = {
   Rifle: {
     type: "rifle",
-    weapons: ["AK-15", "AK-47", "AR-10", "AR-15", "AUG A3", "Bryson Repeater", "CQ300 Lynx", "FAMAS G2", "G36C", "G3A3", "HK416", "Honey Badger", "HW Spear", "L85A2", "M1 Garand", "M14A", "M16A1", "M16A2", "M4 Carbine", "MCX LVAW", "MK18", "MK 17 CQC", "RFB", "Saddlegun", "SKS", "SOPMOD Block II", "FN FAL", "FN FAL Wood", "Groza-4", "SCAR-H", "SCAR-L", "SR-3M Vikhr", "ShAK-12", "SG-552 Commando", "VSS Vintorez", "XM7"],
+    weapons: [
+      "AK-15",
+      "AK-47",
+      "AR-10",
+      "AR-15",
+      "AUG A3",
+      "Bryson Repeater",
+      "CQ300 Lynx",
+      "FAMAS G2",
+      "G36C",
+      "G3A3",
+      "HK416",
+      "Honey Badger",
+      "HW Spear",
+      "L85A2",
+      "M1 Garand",
+      "M14A",
+      "M16A1",
+      "M16A2",
+      "M4 Carbine",
+      "MCX LVAW",
+      "MK18",
+      "MK 17 CQC",
+      "RFB",
+      "Saddlegun",
+      "SKS",
+      "SOPMOD Block II",
+      "FN FAL",
+      "FN FAL Wood",
+      "Groza-4",
+      "SCAR-H",
+      "SCAR-L",
+      "SR-3M Vikhr",
+      "ShAK-12",
+      "SG-552 Commando",
+      "VSS Vintorez",
+      "XM7",
+    ],
   },
   SMG: {
     type: "smg",
@@ -141,7 +178,33 @@ export const WEAPON_CATEGORIES = {
   },
   Pistol: {
     type: "pistol",
-    weapons: ["AG-18C", "AG-19", "CZ-75", "Desert Eagle", "Desert Eagle XIX", "Five SeveN", "HW Cappa", "M1911", "M9", "MAC-10", "Magnum Revolver", "Makarov", "MP443", "P226", "Python", "RMK2", "Speed-Six", "USP Match", "USP MK23", "WA M99", "Cowboy Gun", "Luger P08", "UNICA 6", "SW 500", "Zip .22"],
+    weapons: [
+      "AG-18C",
+      "AG-19",
+      "CZ-75",
+      "Desert Eagle",
+      "Desert Eagle XIX",
+      "Five SeveN",
+      "HW Cappa",
+      "M1911",
+      "M9",
+      "MAC-10",
+      "Magnum Revolver",
+      "Makarov",
+      "MP443",
+      "P226",
+      "Python",
+      "RMK2",
+      "Speed-Six",
+      "USP Match",
+      "USP MK23",
+      "WA M99",
+      "Cowboy Gun",
+      "Luger P08",
+      "UNICA 6",
+      "SW 500",
+      "Zip .22",
+    ],
   },
   Special: {
     type: "special",
@@ -495,7 +558,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "G36C": {
+  G36C: {
     damage_max: 40,
     damage_min: 30,
     damage_falloff_start: 150,
@@ -518,7 +581,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "G3A3": {
+  G3A3: {
     damage_max: 53,
     damage_min: 44,
     damage_falloff_start: 175,
@@ -541,7 +604,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "HK416": {
+  HK416: {
     damage_max: 40,
     damage_min: 30,
     damage_falloff_start: 150,
@@ -656,7 +719,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "Intervention": {
+  Intervention: {
     damage_max: 100,
     damage_min: 50,
     damage_falloff_start: 250,
@@ -702,7 +765,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "L85A2": {
+  L85A2: {
     damage_max: 33,
     damage_min: 23,
     damage_falloff_start: 150,
@@ -725,7 +788,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "L96A1": {
+  L96A1: {
     damage_max: 85,
     damage_min: 35,
     damage_falloff_start: 250,
@@ -817,7 +880,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "M16A1": {
+  M16A1: {
     damage_max: 20,
     damage_min: 16,
     damage_falloff_start: 130,
@@ -840,7 +903,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "M16A2": {
+  M16A2: {
     damage_max: 20,
     damage_min: 16,
     damage_falloff_start: 130,
@@ -863,7 +926,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "M1911": {
+  M1911: {
     damage_max: 25,
     damage_min: 15,
     damage_falloff_start: 75,
@@ -932,7 +995,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "M9": {
+  M9: {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -955,7 +1018,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "M870": {
+  M870: {
     damage_max: 15,
     damage_min: 5,
     pellet_count: 12,
@@ -1024,7 +1087,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "Makarov": {
+  Makarov: {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -1070,7 +1133,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "MG4": {
+  MG4: {
     damage_max: 33,
     damage_min: 23,
     damage_falloff_start: 175,
@@ -1139,7 +1202,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "MK18": {
+  MK18: {
     damage_max: 40,
     damage_min: 30,
     damage_falloff_start: 150,
@@ -1185,7 +1248,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "MP40": {
+  MP40: {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -1208,7 +1271,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "MP443": {
+  MP443: {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -1231,7 +1294,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "MP5A2": {
+  MP5A2: {
     damage_max: 14,
     damage_min: 8,
     damage_falloff_start: 130,
@@ -1254,7 +1317,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "MP5K": {
+  MP5K: {
     damage_max: 18,
     damage_min: 9,
     damage_falloff_start: 100,
@@ -1277,7 +1340,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "MP7": {
+  MP7: {
     damage_max: 29,
     damage_min: 22,
     damage_falloff_start: 100,
@@ -1300,7 +1363,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "MPX": {
+  MPX: {
     damage_max: 25,
     damage_min: 18,
     damage_falloff_start: 120,
@@ -1323,7 +1386,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "P226": {
+  P226: {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -1346,7 +1409,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "P90": {
+  P90: {
     damage_max: 27,
     damage_min: 21,
     damage_falloff_start: 125,
@@ -1415,7 +1478,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "Python": {
+  Python: {
     damage_max: 45,
     damage_min: 35,
     damage_falloff_start: 30,
@@ -1507,7 +1570,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "RFB": {
+  RFB: {
     damage_max: 45,
     damage_min: 34,
     damage_falloff_start: 250,
@@ -1530,7 +1593,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "RPK": {
+  RPK: {
     damage_max: 35,
     damage_min: 26,
     damage_falloff_start: 175,
@@ -1576,7 +1639,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "Saddlegun": {
+  Saddlegun: {
     damage_max: 55,
     damage_min: 22,
     damage_falloff_start: 60,
@@ -1599,7 +1662,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: true,
     game_pass: false,
   },
-  "XM7": {
+  XM7: {
     damage_max: 65,
     damage_min: 50,
     damage_falloff_start: 300,
@@ -1645,7 +1708,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "SKS": {
+  SKS: {
     damage_max: 40,
     damage_min: 30,
     damage_falloff_start: 175,
@@ -1760,7 +1823,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "TMP": {
+  TMP: {
     damage_max: 18,
     damage_min: 9,
     damage_falloff_start: 100,
@@ -1898,7 +1961,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "Uzi": {
+  Uzi: {
     damage_max: 25,
     damage_min: 20,
     damage_falloff_start: 100,
@@ -1944,7 +2007,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "RMK2": {
+  RMK2: {
     damage_max: 6,
     damage_min: 4,
     damage_falloff_start: 50,
@@ -2106,7 +2169,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: true,
   },
-  "Fail": {
+  Fail: {
     damage_max: 5,
     damage_min: 4,
     damage_falloff_start: 200,
@@ -2359,7 +2422,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: true,
   },
-  "M14A": {
+  M14A: {
     damage_max: 55,
     damage_min: 40,
     damage_falloff_start: 175,
@@ -2451,7 +2514,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: true,
   },
-  "Olympia": {
+  Olympia: {
     damage_max: 95,
     damage_min: 40,
     pellet_count: 1,
@@ -2474,7 +2537,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: true,
   },
-  "PP2000": {
+  PP2000: {
     damage_max: 20,
     damage_min: 15,
     damage_falloff_start: 100,
@@ -2727,7 +2790,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: true,
     game_pass: true,
   },
-  "WA2000": {
+  WA2000: {
     damage_max: 80,
     damage_min: 60,
     damage_falloff_start: 300,
