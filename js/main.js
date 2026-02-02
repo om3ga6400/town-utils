@@ -56,13 +56,13 @@ const parseAmmo = (v) => {
  * damage = damage_max * [head|torso|limb]_multiplier * pelletMult
  * shotInterval = 1 / rps (time between shots)
  * magTime = (ammo - 1) / rps (first shot is instant, remaining shots follow fire rate)
- * 
+ *
  * For standard reload:
  *   reloadTime = reload_speed_empty
- * 
+ *
  * For per-bullet reload (reload_per_bullet = true):
  *   reloadTime = ammo * reload_speed_empty
- * 
+ *
  * cycleTime = magTime + reloadTime
  * fullCycles = floor(time / cycleTime)
  * remaining = time - fullCycles * cycleTime
@@ -75,16 +75,18 @@ const calcDPS = (w, time = 10, multType = "none", pelletHitPct = 100) => {
   const s = WEAPON_STATS[w];
   if (!s) return null;
   const mult = multType === "none" ? 1 : (s[multType + "_multiplier"] ?? 1);
-  const pelletMult = s.pellet_count ? (s.pellet_count * pelletHitPct / 100) : 1;
+  const pelletMult = s.pellet_count ? (s.pellet_count * pelletHitPct) / 100 : 1;
   const damage = s.damage_max * mult * pelletMult;
   const ammo = parseAmmo(s.ammo);
   const rps = s.firerate / 60;
-  
+
   // Infinite ammo = no reloads, just continuous fire (first shot instant + continuous)
-  if (ammo === Infinity) return Math.round((1 + time * rps) * damage / time);
-  
+  if (ammo === Infinity) return Math.round(((1 + time * rps) * damage) / time);
+
   // Per-bullet reload: reload time = ammo * reload_speed_empty
-  const reloadTime = s.reload_per_bullet ? ammo * s.reload_speed_empty : s.reload_speed_empty;
+  const reloadTime = s.reload_per_bullet
+    ? ammo * s.reload_speed_empty
+    : s.reload_speed_empty;
   // First shot is instant, so mag time is (ammo - 1) / rps
   const cycleTime = (ammo - 1) / rps + reloadTime;
   const fullCycles = Math.floor(time / cycleTime);
@@ -112,7 +114,9 @@ const render = () => {
   const [left, right] = [WEAPON_STATS[ln], WEAPON_STATS[rn]];
   const time = parseFloat(dpsTime.value) || 10;
   const mult = dpsMultiplier.value;
-  const pelletPct = isNaN(parseFloat(pelletHitPercent.value)) ? 100 : parseFloat(pelletHitPercent.value);
+  const pelletPct = isNaN(parseFloat(pelletHitPercent.value))
+    ? 100
+    : parseFloat(pelletHitPercent.value);
 
   const classRow = `<div class="stat-row">
     <div>${getWeaponClass(ln)}</div>
@@ -121,8 +125,12 @@ const render = () => {
   </div>`;
 
   const statsRows = STATS.map(({ key, label, higher, computed }) => {
-    const lv = computed ? calcDPS(ln, time, mult, pelletPct) : (left?.[key] ?? "—");
-    const rv = computed ? calcDPS(rn, time, mult, pelletPct) : (right?.[key] ?? "—");
+    const lv = computed
+      ? calcDPS(ln, time, mult, pelletPct)
+      : (left?.[key] ?? "—");
+    const rv = computed
+      ? calcDPS(rn, time, mult, pelletPct)
+      : (right?.[key] ?? "—");
     const lvNum = key === "ammo" ? parseAmmo(lv) : +lv;
     const rvNum = key === "ammo" ? parseAmmo(rv) : +rv;
     return `<div class="stat-row">
@@ -151,7 +159,14 @@ const renderSearch = () => {
       name: w,
       value:
         statKey === "dps"
-          ? calcDPS(w, parseFloat(dpsTime.value) || 10, dpsMultiplier.value, isNaN(parseFloat(pelletHitPercent.value)) ? 100 : parseFloat(pelletHitPercent.value))
+          ? calcDPS(
+              w,
+              parseFloat(dpsTime.value) || 10,
+              dpsMultiplier.value,
+              isNaN(parseFloat(pelletHitPercent.value))
+                ? 100
+                : parseFloat(pelletHitPercent.value),
+            )
           : (WEAPON_STATS[w]?.[statKey] ?? null),
     }))
     .filter((w) => w.value !== null)
@@ -199,7 +214,13 @@ sortStat.onchange = () => {
   renderSearch();
 };
 searchInput.oninput = classFilter.onchange = sortOrder.onchange = renderSearch;
-dpsTime.oninput = dpsMultiplier.onchange = pelletHitPercent.oninput = () => { render(); renderSearch(); };
+dpsTime.oninput =
+  dpsMultiplier.onchange =
+  pelletHitPercent.oninput =
+    () => {
+      render();
+      renderSearch();
+    };
 searchResults.onclick = (e) => {
   const row = e.target.closest(".result-row");
   if (row) {
