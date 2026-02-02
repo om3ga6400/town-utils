@@ -80,7 +80,15 @@ input,
   width: 100%;
 }
 
-.filter-row select,
+.filter-row:first-of-type {
+  margin-top: 0;
+}
+
+.filter-row select {
+  flex: 1;
+  min-width: 0;
+}
+
 .filter-row input {
   flex: 1;
 }
