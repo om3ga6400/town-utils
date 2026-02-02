@@ -44,8 +44,7 @@ const pelletHitPercent = $("pellet-hit-percent");
 
 const parseAmmo = (v) => {
   if (v === "inf") return Infinity;
-  if (typeof v === "string" && v.includes("+"))
-    return v.split("+").reduce((a, b) => +a + +b, 0);
+  if (typeof v === "string" && v.includes("+")) return v.split("+").reduce((a, b) => +a + +b, 0);
   return +v;
 };
 
@@ -84,9 +83,7 @@ const calcDPS = (w, time = 10, multType = "none", pelletHitPct = 100) => {
   if (ammo === Infinity) return Math.round(((1 + time * rps) * damage) / time);
 
   // Per-bullet reload: reload time = ammo * reload_speed_empty
-  const reloadTime = s.reload_per_bullet
-    ? ammo * s.reload_speed_empty
-    : s.reload_speed_empty;
+  const reloadTime = s.reload_per_bullet ? ammo * s.reload_speed_empty : s.reload_speed_empty;
   // First shot is instant, so mag time is (ammo - 1) / rps
   const cycleTime = (ammo - 1) / rps + reloadTime;
   const fullCycles = Math.floor(time / cycleTime);
@@ -114,9 +111,7 @@ const render = () => {
   const [left, right] = [WEAPON_STATS[ln], WEAPON_STATS[rn]];
   const time = parseFloat(dpsTime.value) || 10;
   const mult = dpsMultiplier.value;
-  const pelletPct = isNaN(parseFloat(pelletHitPercent.value))
-    ? 100
-    : parseFloat(pelletHitPercent.value);
+  const pelletPct = isNaN(parseFloat(pelletHitPercent.value)) ? 100 : parseFloat(pelletHitPercent.value);
 
   const classRow = `<div class="stat-row">
     <div>${getWeaponClass(ln)}</div>
@@ -125,12 +120,8 @@ const render = () => {
   </div>`;
 
   const statsRows = STATS.map(({ key, label, higher, computed }) => {
-    const lv = computed
-      ? calcDPS(ln, time, mult, pelletPct)
-      : (left?.[key] ?? "—");
-    const rv = computed
-      ? calcDPS(rn, time, mult, pelletPct)
-      : (right?.[key] ?? "—");
+    const lv = computed ? calcDPS(ln, time, mult, pelletPct) : (left?.[key] ?? "—");
+    const rv = computed ? calcDPS(rn, time, mult, pelletPct) : (right?.[key] ?? "—");
     const lvNum = key === "ammo" ? parseAmmo(lv) : +lv;
     const rvNum = key === "ammo" ? parseAmmo(rv) : +rv;
     return `<div class="stat-row">
@@ -148,33 +139,16 @@ const renderSearch = () => {
   const statKey = sortStat.value;
   const stat = STATS.find((s) => s.key === statKey);
   const desc = sortOrder.value === "desc";
-  const classWeapons =
-    classFilter.value === "all"
-      ? weapons
-      : (WEAPON_CATEGORIES[classFilter.value]?.weapons ?? []);
+  const classWeapons = classFilter.value === "all" ? weapons : (WEAPON_CATEGORIES[classFilter.value]?.weapons ?? []);
 
   const filtered = classWeapons
     .filter((w) => w.toLowerCase().includes(query))
     .map((w) => ({
       name: w,
-      value:
-        statKey === "dps"
-          ? calcDPS(
-              w,
-              parseFloat(dpsTime.value) || 10,
-              dpsMultiplier.value,
-              isNaN(parseFloat(pelletHitPercent.value))
-                ? 100
-                : parseFloat(pelletHitPercent.value),
-            )
-          : (WEAPON_STATS[w]?.[statKey] ?? null),
+      value: statKey === "dps" ? calcDPS(w, parseFloat(dpsTime.value) || 10, dpsMultiplier.value, isNaN(parseFloat(pelletHitPercent.value)) ? 100 : parseFloat(pelletHitPercent.value)) : (WEAPON_STATS[w]?.[statKey] ?? null),
     }))
     .filter((w) => w.value !== null)
-    .sort(
-      (a, b) =>
-        (desc === stat.higher ? -1 : 1) *
-        (parseAmmo(a.value) - parseAmmo(b.value)),
-    );
+    .sort((a, b) => (desc === stat.higher ? -1 : 1) * (parseAmmo(a.value) - parseAmmo(b.value)));
 
   searchResults.innerHTML = filtered
     .map(
@@ -198,9 +172,7 @@ classFilter.innerHTML =
     .map((c) => `<option value="${c}">${c}</option>`)
     .join("");
 
-sortStat.innerHTML = STATS.map(
-  (s) => `<option value="${s.key}">${s.label}</option>`,
-).join("");
+sortStat.innerHTML = STATS.map((s) => `<option value="${s.key}">${s.label}</option>`).join("");
 
 dpsRow.style.display = "flex";
 dpsMultiplier.style.display = "block";
