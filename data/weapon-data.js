@@ -1323,7 +1323,7 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: false,
   },
-  "MP7A1": {
+  MP7A1: {
     damage_max: 29,
     damage_min: 22,
     damage_falloff_start: 100,
