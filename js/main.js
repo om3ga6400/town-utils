@@ -26,26 +26,26 @@ const STATS = [
 ];
 
 const weapons = Object.keys(WEAPON_STATS).sort();
-const $ = (id) => document.getElementById(id);
+const getById = (id) => document.getElementById(id);
 
 // DOM
-const selectLeft = $("weapon-left");
-const selectRight = $("weapon-right");
-const output = $("stats-output");
-const searchInput = $("search-input");
-const classFilter = $("class-filter");
-const sortStat = $("sort-stat");
-const sortOrder = $("sort-order");
-const searchResults = $("search-results");
+const selectLeft = getById("weapon-left");
+const selectRight = getById("weapon-right");
+const output = getById("stats-output");
+const searchInput = getById("search-input");
+const classFilter = getById("class-filter");
+const sortStat = getById("sort-stat");
+const sortOrder = getById("sort-order");
+const searchResults = getById("search-results");
 const dpsRow = document.querySelector(".dps-row");
-const dpsTime = $("dps-time");
-const dpsMultiplier = $("dps-multiplier");
-const pelletHitPercent = $("pellet-hit-percent");
+const dpsTime = getById("dps-time");
+const dpsMultiplier = getById("dps-multiplier");
+const pelletHitPercent = getById("pellet-hit-percent");
 
-const parseAmmo = (v) => {
-  if (v === "inf") return Infinity;
-  if (typeof v === "string" && v.includes("+")) return v.split("+").reduce((a, b) => +a + +b, 0);
-  return +v;
+const parseAmmo = (value) => {
+  if (value === "inf") return Infinity;
+  if (typeof value === "string" && value.includes("+")) return value.split("+").reduce((sum, num) => +sum + +num, 0);
+  return +value;
 };
 
 /*
@@ -70,20 +70,20 @@ const parseAmmo = (v) => {
  * totalDamage = totalShots * damage
  * DPS = totalDamage / time
  */
-const calcDPS = (w, time = 10, multType = "none", pelletHitPct = 100) => {
-  const s = WEAPON_STATS[w];
-  if (!s) return null;
-  const mult = multType === "none" ? 1 : (s[multType + "_multiplier"] ?? 1);
-  const pelletMult = s.pellet_count ? (s.pellet_count * pelletHitPct) / 100 : 1;
-  const damage = s.damage_max * mult * pelletMult;
-  const ammo = parseAmmo(s.ammo);
-  const rps = s.firerate / 60;
+const calcDPS = (weaponName, time = 10, multType = "none", pelletHitPct = 100) => {
+  const stats = WEAPON_STATS[weaponName];
+  if (!stats) return null;
+  const multiplier = multType === "none" ? 1 : (stats[multType + "_multiplier"] ?? 1);
+  const pelletMult = stats.pellet_count ? (stats.pellet_count * pelletHitPct) / 100 : 1;
+  const damage = stats.damage_max * multiplier * pelletMult;
+  const ammo = parseAmmo(stats.ammo);
+  const rps = stats.firerate / 60;
 
   // Infinite ammo = no reloads, just continuous fire (first shot instant + continuous)
   if (ammo === Infinity) return Math.round(((1 + time * rps) * damage) / time);
 
   // Per-bullet reload: reload time = ammo * reload_speed_empty
-  const reloadTime = s.reload_per_bullet ? ammo * s.reload_speed_empty : s.reload_speed_empty;
+  const reloadTime = stats.reload_per_bullet ? ammo * stats.reload_speed_empty : stats.reload_speed_empty;
   // First shot is instant, so mag time is (ammo - 1) / rps
   const cycleTime = (ammo - 1) / rps + reloadTime;
   const fullCycles = Math.floor(time / cycleTime);
@@ -93,10 +93,10 @@ const calcDPS = (w, time = 10, multType = "none", pelletHitPct = 100) => {
   return Math.round(((fullCycles * ammo + remainingShots) * damage) / time);
 };
 
-const getClass = (a, b, higher) => {
-  if (a === b) return "same";
-  if (isNaN(a) || isNaN(b)) return "";
-  return (higher ? a > b : a < b) ? "better" : "worse";
+const getClass = (leftVal, rightVal, higher) => {
+  if (leftVal === rightVal) return "same";
+  if (isNaN(leftVal) || isNaN(rightVal)) return "";
+  return (higher ? leftVal > rightVal : leftVal < rightVal) ? "better" : "worse";
 };
 
 const getWeaponClass = (weaponName) => {
@@ -107,27 +107,27 @@ const getWeaponClass = (weaponName) => {
 };
 
 const render = () => {
-  const [ln, rn] = [selectLeft.value, selectRight.value];
-  const [left, right] = [WEAPON_STATS[ln], WEAPON_STATS[rn]];
+  const [leftName, rightName] = [selectLeft.value, selectRight.value];
+  const [leftStats, rightStats] = [WEAPON_STATS[leftName], WEAPON_STATS[rightName]];
   const time = parseFloat(dpsTime.value) || 10;
-  const mult = dpsMultiplier.value;
+  const multiplierType = dpsMultiplier.value;
   const pelletPct = isNaN(parseFloat(pelletHitPercent.value)) ? 100 : parseFloat(pelletHitPercent.value);
 
   const classRow = `<div class="stat-row">
-    <div>${getWeaponClass(ln)}</div>
+    <div>${getWeaponClass(leftName)}</div>
     <div>Class</div>
-    <div>${getWeaponClass(rn)}</div>
+    <div>${getWeaponClass(rightName)}</div>
   </div>`;
 
   const statsRows = STATS.map(({ key, label, higher, computed }) => {
-    const lv = computed ? calcDPS(ln, time, mult, pelletPct) : (left?.[key] ?? "—");
-    const rv = computed ? calcDPS(rn, time, mult, pelletPct) : (right?.[key] ?? "—");
-    const lvNum = key === "ammo" ? parseAmmo(lv) : +lv;
-    const rvNum = key === "ammo" ? parseAmmo(rv) : +rv;
+    const leftValue = computed ? calcDPS(leftName, time, multiplierType, pelletPct) : (leftStats?.[key] ?? "—");
+    const rightValue = computed ? calcDPS(rightName, time, multiplierType, pelletPct) : (rightStats?.[key] ?? "—");
+    const leftNum = key === "ammo" ? parseAmmo(leftValue) : +leftValue;
+    const rightNum = key === "ammo" ? parseAmmo(rightValue) : +rightValue;
     return `<div class="stat-row">
-      <div class="${getClass(lvNum, rvNum, higher)}">${lv}</div>
+      <div class="${getClass(leftNum, rightNum, higher)}">${leftValue}</div>
       <div>${label}</div>
-      <div class="${getClass(rvNum, lvNum, higher)}">${rv}</div>
+      <div class="${getClass(rightNum, leftNum, higher)}">${rightValue}</div>
     </div>`;
   }).join("");
 
@@ -137,42 +137,42 @@ const render = () => {
 const renderSearch = () => {
   const query = searchInput.value.toLowerCase();
   const statKey = sortStat.value;
-  const stat = STATS.find((s) => s.key === statKey);
-  const desc = sortOrder.value === "desc";
+  const stat = STATS.find((statItem) => statItem.key === statKey);
+  const isDescending = sortOrder.value === "desc";
   const classWeapons = classFilter.value === "all" ? weapons : (WEAPON_CATEGORIES[classFilter.value]?.weapons ?? []);
 
   const filtered = classWeapons
-    .filter((w) => w.toLowerCase().includes(query))
-    .map((w) => ({
-      name: w,
-      value: statKey === "dps" ? calcDPS(w, parseFloat(dpsTime.value) || 10, dpsMultiplier.value, isNaN(parseFloat(pelletHitPercent.value)) ? 100 : parseFloat(pelletHitPercent.value)) : (WEAPON_STATS[w]?.[statKey] ?? null),
+    .filter((weapon) => weapon.toLowerCase().includes(query))
+    .map((weapon) => ({
+      name: weapon,
+      value: statKey === "dps" ? calcDPS(weapon, parseFloat(dpsTime.value) || 10, dpsMultiplier.value, isNaN(parseFloat(pelletHitPercent.value)) ? 100 : parseFloat(pelletHitPercent.value)) : (WEAPON_STATS[weapon]?.[statKey] ?? null),
     }))
-    .filter((w) => w.value !== null)
-    .sort((a, b) => (desc === stat.higher ? -1 : 1) * (parseAmmo(a.value) - parseAmmo(b.value)));
+    .filter((weaponData) => weaponData.value !== null)
+    .sort((itemA, itemB) => (isDescending === stat.higher ? -1 : 1) * (parseAmmo(itemA.value) - parseAmmo(itemB.value)));
 
   searchResults.innerHTML = filtered
     .map(
-      (w, i) => `<div class="result-row" data-weapon="${w.name}">
-    <span>${w.name}</span>
-    <span class="stat-value">${w.value}</span>
-    <span class="placement">#${i + 1}</span>
+      (weapon, index) => `<div class="result-row" data-weapon="${weapon.name}">
+    <span>${weapon.name}</span>
+    <span class="stat-value">${weapon.value}</span>
+    <span class="placement">#${index + 1}</span>
   </div>`,
     )
     .join("");
 };
 
 // Init dropdowns
-const opts = weapons.map((w) => `<option value="${w}">${w}</option>`).join("");
-selectLeft.innerHTML = selectRight.innerHTML = opts;
+const weaponOptions = weapons.map((weapon) => `<option value="${weapon}">${weapon}</option>`).join("");
+selectLeft.innerHTML = selectRight.innerHTML = weaponOptions;
 selectRight.selectedIndex = Math.min(1, weapons.length - 1);
 
 classFilter.innerHTML =
   `<option value="all">All Classes</option>` +
   Object.keys(WEAPON_CATEGORIES)
-    .map((c) => `<option value="${c}">${c}</option>`)
+    .map((className) => `<option value="${className}">${className}</option>`)
     .join("");
 
-sortStat.innerHTML = STATS.map((s) => `<option value="${s.key}">${s.label}</option>`).join("");
+sortStat.innerHTML = STATS.map((stat) => `<option value="${stat.key}">${stat.label}</option>`).join("");
 
 dpsRow.style.display = "flex";
 dpsMultiplier.style.display = "block";
@@ -193,8 +193,8 @@ dpsTime.oninput =
       render();
       renderSearch();
     };
-searchResults.onclick = (e) => {
-  const row = e.target.closest(".result-row");
+searchResults.onclick = (event) => {
+  const row = event.target.closest(".result-row");
   if (row) {
     selectLeft.value = row.dataset.weapon;
     render();
