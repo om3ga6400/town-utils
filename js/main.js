@@ -54,9 +54,7 @@ const parseAmmo = (value) => {
 };
 
 const getWeaponClass = (weaponName) => {
-  return Object.keys(WEAPON_CATEGORIES).find(className => 
-    WEAPON_CATEGORIES[className].weapons.includes(weaponName)
-  ) || "Unknown";
+  return Object.keys(WEAPON_CATEGORIES).find((className) => WEAPON_CATEGORIES[className].weapons.includes(weaponName)) || "Unknown";
 };
 
 const getComparisonClass = (leftVal, rightVal, higherIsBetter) => {
@@ -92,7 +90,7 @@ const calcDPS = (weaponName, time = 10, multType = "none", pelletHitPct = 100, d
   const pelletMult = stats.pellet_count ? (stats.pellet_count * pelletHitPct) / 100 : 1;
   const baseDamage = calcDamageAtDistance(stats, distance);
   const totalDamagePerShot = baseDamage * multiplier * pelletMult;
-  
+
   const ammo = parseAmmo(stats.ammo);
   const rps = (stats.firerate || 0) / 60; // Rounds per second
 
@@ -107,7 +105,7 @@ const calcDPS = (weaponName, time = 10, multType = "none", pelletHitPct = 100, d
   const fullCycles = Math.floor(time / cycleTime);
   const remainingTime = time - fullCycles * cycleTime;
   const remainingShots = Math.min(ammo, 1 + Math.floor(remainingTime * rps));
-  
+
   return Math.round(((fullCycles * ammo + remainingShots) * totalDamagePerShot) / time);
 };
 
@@ -117,7 +115,7 @@ const renderComparison = () => {
   const rightName = selectRight.value;
   const leftStats = WEAPON_STATS[leftName];
   const rightStats = WEAPON_STATS[rightName];
-  
+
   const time = getInputValue(dpsTime, 10);
   const pelletPct = getInputValue(pelletHitPercent, 100);
   const distance = getInputValue(dpsDistance, 0);
@@ -132,17 +130,13 @@ const renderComparison = () => {
   `;
 
   const statsRows = STATS.map(({ key, label, higher, computed }) => {
-    const leftValue = computed 
-      ? calcDPS(leftName, time, multiplierType, pelletPct, distance) 
-      : (leftStats?.[key] ?? "—");
-    
-    const rightValue = computed 
-      ? calcDPS(rightName, time, multiplierType, pelletPct, distance) 
-      : (rightStats?.[key] ?? "—");
-    
+    const leftValue = computed ? calcDPS(leftName, time, multiplierType, pelletPct, distance) : (leftStats?.[key] ?? "—");
+
+    const rightValue = computed ? calcDPS(rightName, time, multiplierType, pelletPct, distance) : (rightStats?.[key] ?? "—");
+
     const leftNum = key === "ammo" ? parseAmmo(leftValue) : Number(leftValue);
     const rightNum = key === "ammo" ? parseAmmo(rightValue) : Number(rightValue);
-    
+
     const leftClass = getComparisonClass(leftNum, rightNum, higher);
     const rightClass = getComparisonClass(rightNum, leftNum, higher);
 
@@ -164,36 +158,36 @@ const renderSearch = () => {
   const statConfig = STATS.find((s) => s.key === statKey);
   const isDescending = sortOrder.value === "desc";
   const classFilterValue = classFilter.value;
-  
-  const classWeapons = classFilterValue === "all" 
-    ? weapons 
-    : (WEAPON_CATEGORIES[classFilterValue]?.weapons ?? []);
+
+  const classWeapons = classFilterValue === "all" ? weapons : (WEAPON_CATEGORIES[classFilterValue]?.weapons ?? []);
 
   const time = getInputValue(dpsTime, 10);
   const pelletPct = getInputValue(pelletHitPercent, 100);
   const distance = getInputValue(dpsDistance, 0);
 
   const filtered = classWeapons
-    .filter(weapon => weapon.toLowerCase().includes(query))
-    .map(weapon => ({
+    .filter((weapon) => weapon.toLowerCase().includes(query))
+    .map((weapon) => ({
       name: weapon,
-      value: statKey === "dps" 
-        ? calcDPS(weapon, time, dpsMultiplier.value, pelletPct, distance) 
-        : (WEAPON_STATS[weapon]?.[statKey] ?? null),
+      value: statKey === "dps" ? calcDPS(weapon, time, dpsMultiplier.value, pelletPct, distance) : (WEAPON_STATS[weapon]?.[statKey] ?? null),
     }))
-    .filter(item => item.value !== null)
+    .filter((item) => item.value !== null)
     .sort((a, b) => {
       const diff = parseAmmo(a.value) - parseAmmo(b.value);
       return (isDescending === !!statConfig?.higher ? -1 : 1) * diff;
     });
 
-  searchResults.innerHTML = filtered.map((item, index) => `
+  searchResults.innerHTML = filtered
+    .map(
+      (item, index) => `
     <div class="result-row" data-weapon="${item.name}">
       <span>${item.name}</span>
       <span class="stat-value">${item.value}</span>
       <span class="placement">#${index + 1}</span>
     </div>
-  `).join("");
+  `,
+    )
+    .join("");
 };
 
 const updateUIState = () => {
@@ -205,16 +199,17 @@ const updateUIState = () => {
 // --- Initialization & Event Listeners ---
 const init = () => {
   // Populate dropdowns
-  const weaponOptionsHtml = weapons.map(w => `<option value="${w}">${w}</option>`).join("");
+  const weaponOptionsHtml = weapons.map((w) => `<option value="${w}">${w}</option>`).join("");
   selectLeft.innerHTML = weaponOptionsHtml;
   selectRight.innerHTML = weaponOptionsHtml;
   selectRight.selectedIndex = Math.min(1, weapons.length - 1);
 
   const classOptionsHtml = Object.keys(WEAPON_CATEGORIES)
-    .map(cls => `<option value="${cls}">${cls}</option>`).join("");
+    .map((cls) => `<option value="${cls}">${cls}</option>`)
+    .join("");
   classFilter.innerHTML = `<option value="all">All Classes</option>${classOptionsHtml}`;
 
-  sortStat.innerHTML = STATS.map(s => `<option value="${s.key}">${s.label}</option>`).join("");
+  sortStat.innerHTML = STATS.map((s) => `<option value="${s.key}">${s.label}</option>`).join("");
 
   // Initialize UI state
   updateUIState();
@@ -229,17 +224,17 @@ const init = () => {
 
   selectLeft.addEventListener("change", renderComparison);
   selectRight.addEventListener("change", renderComparison);
-  
+
   sortStat.addEventListener("change", () => {
     updateUIState();
     renderSearch();
   });
-  
+
   searchInput.addEventListener("input", renderSearch);
   classFilter.addEventListener("change", renderSearch);
   sortOrder.addEventListener("change", renderSearch);
-  
-  [dpsTime, dpsMultiplier, pelletHitPercent, dpsDistance].forEach(el => {
+
+  [dpsTime, dpsMultiplier, pelletHitPercent, dpsDistance].forEach((el) => {
     el.addEventListener("input", reRenderAll);
     el.addEventListener("change", reRenderAll);
   });
