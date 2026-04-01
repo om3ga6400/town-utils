@@ -74,10 +74,15 @@ input,
 
 .filter-row {
   display: flex;
+  flex-wrap: nowrap;
   gap: 0.5rem;
   margin-top: 0.5rem;
   align-items: center;
   width: 100%;
+}
+
+.filter-row.dps-row {
+  flex-wrap: wrap;
 }
 
 .filter-row:first-of-type {
