@@ -1,5 +1,5 @@
-export let WEAPON_STATS = {};
-export let WEAPON_CATEGORIES = {};
+export let ITEM_STATS = {};
+export let ITEM_CATEGORIES = {};
 export let weapons = [];
 
 export const STATS = [
@@ -25,6 +25,12 @@ export const STATS = [
   { key: "pellet_count", label: "Pellet count", higher: true },
   { key: "reload_per_bullet", label: "Reload per bullet", higher: false },
   { key: "game_pass", label: "Game Pass" },
+  { key: "accuracy", label: "Accuracy", higher: true },
+  { key: "range_finder", label: "Range Finder", higher: true },
+  { key: "suppression_mult", label: "Suppression", higher: true },
+  { key: "hide_flash", label: "Hide Flash", higher: true },
+  { key: "bullet_speed_min", label: "Bullet Speed", higher: true },
+  { key: "muzzle_flip", label: "Muzzle Flip", higher: false },
 ];
 
 export const setWeapons = (weaponList) => {

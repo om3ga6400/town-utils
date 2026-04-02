@@ -1,6 +1,7 @@
 export const $ = (id) => document.getElementById(id);
 export const selectLeft = $("weapon-left");
 export const selectRight = $("weapon-right");
+export const compareCategory = $("compare-category");
 export const output = $("stats-output");
 export const searchInput = $("search-input");
 export const classFilter = $("class-filter");

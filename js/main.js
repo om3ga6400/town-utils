@@ -1,14 +1,15 @@
-import { WEAPON_STATS, WEAPON_CATEGORIES, weapons, STATS, setWeapons } from "./config.js";
-import { selectLeft, selectRight, classFilter, sortStat, searchInput, sortOrder, dpsTime, dpsMultiplier, accuracyPercent, dpsDistance, searchResults } from "./dom.js";
-import { renderComparison, renderSearch, updateUIState } from "./render.js";
+import { ITEM_STATS, ITEM_CATEGORIES, weapons, STATS, setWeapons } from "./config.js";
+import { selectLeft, selectRight, compareCategory, classFilter, sortStat, searchInput, sortOrder, dpsTime, dpsMultiplier, accuracyPercent, dpsDistance, searchResults } from "./dom.js";
+import { renderComparison, renderSearch, renderWeaponOptions, updateUIState } from "./render.js";
 
 const init = () => {
-  const weaponOptionsHtml = weapons.map((weapon) => `<option value="${weapon}">${weapon}</option>`).join("");
-  selectLeft.innerHTML = weaponOptionsHtml;
-  selectRight.innerHTML = weaponOptionsHtml;
-  selectRight.selectedIndex = Math.min(1, weapons.length - 1);
+  compareCategory.innerHTML = Object.keys(ITEM_CATEGORIES)
+    .map((category) => `<option value="${category}">${category}</option>`)
+    .join("");
+  compareCategory.value = "Guns";
+  renderWeaponOptions();
 
-  classFilter.innerHTML = ['<option value="all">All Classes</option>', ...Object.keys(WEAPON_CATEGORIES).map((weaponClass) => `<option value="${weaponClass}">${weaponClass}</option>`)].join("");
+  classFilter.innerHTML = ['<option value="all">All Classes</option>', ...Object.keys(ITEM_CATEGORIES).map((weaponClass) => `<option value="${weaponClass}">${weaponClass}</option>`)].join("");
 
   sortStat.innerHTML = STATS.map((stat) => `<option value="${stat.key}">${stat.label}</option>`).join("");
 
@@ -21,6 +22,10 @@ const init = () => {
     renderSearch();
   };
 
+  compareCategory.addEventListener("change", () => {
+    renderWeaponOptions();
+    renderComparison();
+  });
   [selectLeft, selectRight].forEach((element) => element.addEventListener("change", renderComparison));
   sortStat.addEventListener("change", () => {
     updateUIState();
@@ -44,18 +49,26 @@ const init = () => {
 };
 
 const loadDataAndInit = async () => {
-  const categories = ["lmgs", "pistols", "rifles", "shotguns", "smgs", "snipers", "specials"];
+  const allGuns = [];
 
   await Promise.all(
-    categories.map(async (category) => {
-      const data = await fetch(`data/guns/${category}.json`).then((response) => response.json());
-      const formattedCategory = category.charAt(0).toUpperCase() + category.slice(1);
-      WEAPON_CATEGORIES[formattedCategory] = { weapons: Object.keys(data) };
-      Object.assign(WEAPON_STATS, data);
+    ["lmgs", "pistols", "rifles", "shotguns", "smgs", "snipers", "specials"].map(async (category) => {
+      const data = await fetch(`data/guns/${category}.json`).then((r) => r.json());
+      Object.assign(ITEM_STATS, data);
+      allGuns.push(...Object.keys(data));
+    }),
+  );
+  ITEM_CATEGORIES["Guns"] = { weapons: allGuns };
+
+  await Promise.all(
+    ["barrels", "grips", "others", "sights", "stocks"].map(async (category) => {
+      const data = await fetch(`data/attachments/${category}.json`).then((r) => r.json());
+      ITEM_CATEGORIES[category.charAt(0).toUpperCase() + category.slice(1)] = { weapons: Object.keys(data) };
+      Object.assign(ITEM_STATS, data);
     }),
   );
 
-  setWeapons(Object.keys(WEAPON_STATS).sort());
+  setWeapons(Object.keys(ITEM_STATS).sort());
   init();
 };
 

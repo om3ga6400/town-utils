@@ -1,4 +1,4 @@
-import { WEAPON_CATEGORIES } from "./config.js";
+import { ITEM_CATEGORIES } from "./config.js";
 
 export const parseAmmo = (value) => {
   if (value === "inf") return Infinity;
@@ -8,7 +8,7 @@ export const parseAmmo = (value) => {
   return Number(value) || 0;
 };
 
-export const getWeaponClass = (weaponName) => Object.entries(WEAPON_CATEGORIES).find(([_, cat]) => cat.weapons.includes(weaponName))?.[0] || "Unknown";
+export const getWeaponClass = (weaponName) => Object.entries(ITEM_CATEGORIES).find(([_, cat]) => cat.weapons.includes(weaponName))?.[0] || "Unknown";
 
 export const getComparisonClass = (left, right, higherIsBetter) => {
   if (left === right) return "same";

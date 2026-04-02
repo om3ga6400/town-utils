@@ -1,4 +1,4 @@
-import { WEAPON_STATS } from "./config.js";
+import { ITEM_STATS } from "./config.js";
 import { parseAmmo } from "./utils.js";
 
 export const calcDamageAtDistance = (stats, distance = 0) => {
@@ -16,7 +16,7 @@ export const calcDamageAtDistance = (stats, distance = 0) => {
 };
 
 export const calcDPS = (weaponName, time = 10, multType = "none", accuracyPct = 100, distance = 0) => {
-  const stats = WEAPON_STATS[weaponName];
+  const stats = ITEM_STATS[weaponName];
 
   const multiplier = multType === "none" ? 1 : (stats[`${multType}_multiplier`] ?? 1);
   const pelletMult = stats.pellet_count ? (stats.pellet_count * accuracyPct) / 100 : 1;
