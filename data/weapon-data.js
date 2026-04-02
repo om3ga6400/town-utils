@@ -93,7 +93,7 @@ CQ300 Lynx
 Double Barrel
 Fail
 FN FAL
-FN FAL Wood
+L2A1 SLR
 GM6 Lynx
 Groza-4
 HW Pulper

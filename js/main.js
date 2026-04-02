@@ -76,7 +76,8 @@ const calcDamageAtDistance = (stats, distance = 0) => {
   const maxRange = Number(stats.max_bullet_range ?? stats.damage_falloff_start) || 0;
 
   if (maxRange <= 0) return maxDamage;
-  if (dist >= maxRange) return minDamage;
+  if (dist > maxRange) return 0;
+  if (dist === maxRange) return minDamage;
 
   const t = dist / maxRange;
   return maxDamage + (minDamage - maxDamage) * t;
@@ -93,13 +94,11 @@ const calcDPS = (weaponName, time = 10, multType = "none", pelletHitPct = 100, d
 
   const ammo = parseAmmo(stats.ammo);
   const rps = (stats.firerate || 0) / 60; // Rounds per second
-
-  // Infinite ammo calculation
+  
   if (ammo === Infinity) {
     return Math.round(((1 + time * rps) * totalDamagePerShot) / time);
   }
 
-  // Reload calculation
   const reloadTime = stats.reload_per_bullet ? ammo * stats.reload_speed_empty : stats.reload_speed_empty;
   const cycleTime = (ammo - 1) / rps + reloadTime;
   const fullCycles = Math.floor(time / cycleTime);
@@ -109,7 +108,6 @@ const calcDPS = (weaponName, time = 10, multType = "none", pelletHitPct = 100, d
   return Math.round(((fullCycles * ammo + remainingShots) * totalDamagePerShot) / time);
 };
 
-// --- Rendering Functions ---
 const renderComparison = () => {
   const leftName = selectLeft.value;
   const rightName = selectRight.value;
