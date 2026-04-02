@@ -1,0 +1,133 @@
+{
+  "MK23 Suppressor": {
+    "weight": 2,
+    "suppression_mult": "50%",
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-10%",
+    "accuracy": "10%",
+    "bullet_speed_min": "-15%",
+    "hide_flash": true,
+    "game_pass": false
+  },
+  "PBS Suppressor": {
+    "weight": 2,
+    "suppression_mult": "75%",
+    "vertical_recoil": "-15%",
+    "horizontal_recoil": "-10%",
+    "accuracy": "5%",
+    "bullet_speed_min": "-35%",
+    "hide_flash": true,
+    "muzzle_flip": "-30%",
+    "game_pass": false
+  },
+  "Suppressor": {
+    "weight": 2,
+    "suppression_mult": "50%",
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-10%",
+    "accuracy": "5%",
+    "bullet_speed_min": "-15%",
+    "hide_flash": true,
+    "muzzle_flip": "-30%",
+    "game_pass": false
+  },
+  "Heavy Suppressor": {
+    "weight": 3,
+    "suppression_mult": "75%",
+    "vertical_recoil": "-10%",
+    "horizontal_recoil": "-10%",
+    "accuracy": "12%",
+    "bullet_speed_min": "-25%",
+    "hide_flash": true,
+    "muzzle_flip": "-90%",
+    "game_pass": false
+  },
+  "SLR Compensator": {
+    "weight": 0.5,
+    "vertical_recoil": "-4%",
+    "horizontal_recoil": "-20%",
+    "accuracy": "7%",
+    "hide_flash": false,
+    "muzzle_flip": "-30%",
+    "game_pass": false
+  },
+  "TAA Muzzle Brake": {
+    "weight": 0.5,
+    "vertical_recoil": "-8%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "11%",
+    "hide_flash": false,
+    "muzzle_flip": "-10%",
+    "game_pass": false
+  },
+  "Compensator": {
+    "weight": 1,
+    "vertical_recoil": "-8%",
+    "horizontal_recoil": "-25%",
+    "accuracy": "13%",
+    "hide_flash": false,
+    "muzzle_flip": "-95%",
+    "game_pass": false
+  },
+  "Wide Choke": {
+    "weight": 0.2,
+    "vertical_recoil": "-5%",
+    "accuracy": "-40%",
+    "hide_flash": false,
+    "game_pass": false
+  },
+  "Oil Filter": {
+    "weight": 3,
+    "suppression_mult": "85%",
+    "vertical_recoil": "-15%",
+    "horizontal_recoil": "-15%",
+    "accuracy": "-20%",
+    "hide_flash": true,
+    "game_pass": false
+  },
+  "Short Suppressor": {
+    "weight": 1,
+    "suppression_mult": "40%",
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "0%",
+    "bullet_speed_min": "-10%",
+    "hide_flash": true,
+    "muzzle_flip": "-20%",
+    "equip_speed": "0%",
+    "sway_time": "0%",
+    "game_pass": false
+  },
+  "Flash Hider": {
+    "weight": 0.2,
+    "suppression_mult": "0%",
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "11%",
+    "bullet_speed_min": "0%",
+    "hide_flash": true,
+    "muzzle_flip": "0%",
+    "equip_speed": "0%",
+    "sway_time": "0%",
+    "game_pass": false
+  },
+  "Osprey Suppressor": {
+    "weight": 2.5,
+    "suppression_mult": "65%",
+    "vertical_recoil": "-10%",
+    "horizontal_recoil": "-5%",
+    "bullet_speed_min": "-45%",
+    "hide_flash": true,
+    "game_pass": false
+  },
+  "Muzzle Brake": {
+    "weight": 1.5,
+    "suppression_mult": "0%",
+    "vertical_recoil": "-14%",
+    "horizontal_recoil": "-8%",
+    "accuracy": "28%",
+    "hide_flash": false,
+    "equip_speed": "-19%",
+    "game_pass": false
+  }
+}

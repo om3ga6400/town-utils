@@ -1,0 +1,134 @@
+{
+  "Vertical Grip": {
+    "weight": 3,
+    "vertical_recoil": "-30%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "-10%",
+    "aim_speed": "33%",
+    "muzzle_flip": "30%",
+    "sway_time": "20%",
+    "game_pass": false
+  },
+  "SE Elite Grip": {
+    "weight": 1.5,
+    "vertical_recoil": "-15%",
+    "horizontal_recoil": "-15%",
+    "accuracy": "15%",
+    "aim_speed": "-10%",
+    "game_pass": false
+  },
+  "Unfold Grip": {
+    "weight": 0.5,
+    "vertical_recoil": "-10%",
+    "horizontal_recoil": "-10%",
+    "game_pass": false
+  },
+  "RK-6 Short Grip": {
+    "weight": 0.2,
+    "vertical_recoil": "-5%",
+    "accuracy": "10%",
+    "aim_speed": "-9%",
+    "equip_speed": "-5%",
+    "game_pass": false
+  },
+  "Offset RK-2 Foregrip": {
+    "weight": 2,
+    "horizontal_recoil": "-40%",
+    "accuracy": "10%",
+    "aim_speed": "50%",
+    "equip_speed": "-30%",
+    "sway_time": "20%",
+    "game_pass": false
+  },
+  "RSB Grip": {
+    "weight": 0.1,
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-20%",
+    "accuracy": "8%",
+    "aim_speed": "-15%",
+    "equip_speed": "-10%",
+    "game_pass": false
+  },
+  "DD Grip": {
+    "weight": 3,
+    "vertical_recoil": "-30%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "-10%",
+    "aim_speed": "33%",
+    "muzzle_flip": "30%",
+    "sway_time": "20%",
+    "game_pass": false
+  },
+  "Folding Grip": {
+    "weight": 1.5,
+    "vertical_recoil": "-20%",
+    "horizontal_recoil": "-20%",
+    "accuracy": "8%",
+    "aim_speed": "10%",
+    "guns": ["MP7"],
+    "game_pass": false
+  },
+  "Skeleton Grip": {
+    "weight": 0.1,
+    "vertical_recoil": "-10%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "5%",
+    "aim_speed": "-20%",
+    "equip_speed": "-10%",
+    "sway_time": "-10%",
+    "game_pass": false
+  },
+  "Angled Grip": {
+    "weight": 0.5,
+    "vertical_recoil": "-10%",
+    "horizontal_recoil": "-10%",
+    "accuracy": "50%",
+    "muzzle_flip": "-15%",
+    "equip_speed": "35%",
+    "game_pass": false
+  },
+  "Ergo Grip": {
+    "weight": 3,
+    "vertical_recoil": "-30%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "-10%",
+    "aim_speed": "33%",
+    "muzzle_flip": "30%",
+    "sway_time": "20%",
+    "game_pass": false
+  },
+  "MOE Grip": {
+    "weight": 0.5,
+    "vertical_recoil": "-20%",
+    "accuracy": "-10%",
+    "aim_speed": "20%",
+    "game_pass": false
+  },
+  "Bipod": {
+    "weight": 3,
+    "horizontal_recoil": "-40%",
+    "accuracy": "75%",
+    "aim_speed": "50%",
+    "muzzle_flip": "-75%",
+    "equip_speed": "100%",
+    "game_pass": false
+  },
+  "Strike Grip": {
+    "weight": 0.5,
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-25%",
+    "accuracy": "30%",
+    "muzzle_flip": "-10%",
+    "equip_speed": "20%",
+    "game_pass": false
+  },
+  "Hera CQR Front Grip": {
+    "weight": 4,
+    "vertical_recoil": "-25%",
+    "horizontal_recoil": "-10%",
+    "aim_speed": "20%",
+    "equip_speed": "25%",
+    "sway_time": "33%",
+    "game_pass": false
+  }
+}
