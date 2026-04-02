@@ -1,5 +1,5 @@
 import { WEAPON_STATS, WEAPON_CATEGORIES, STATS, weapons } from "./config.js";
-import { selectLeft, selectRight, output, searchInput, sortStat, sortOrder, classFilter, dpsTime, pelletHitPercent, dpsDistance, dpsMultiplier, searchResults, dpsRow } from "./dom.js";
+import { selectLeft, selectRight, output, searchInput, sortStat, sortOrder, classFilter, dpsTime, accuracyPercent, dpsDistance, dpsMultiplier, searchResults, dpsRow } from "./dom.js";
 import { getWeaponClass, getComparisonClass, getInputValue, parseAmmo } from "./utils.js";
 import { calcDPS } from "./calculator.js";
 
@@ -10,11 +10,11 @@ export const renderComparison = () => {
   const rightStats = WEAPON_STATS[rightName] || {};
 
   const time = getInputValue(dpsTime, 10);
-  const pelletPct = getInputValue(pelletHitPercent, 100);
+  const accuracyPct = getInputValue(accuracyPercent, 100);
   const distance = getInputValue(dpsDistance, 0);
   const multiplierType = dpsMultiplier.value;
 
-  const getStatValue = (name, stats, key, computed) => (computed ? calcDPS(name, time, multiplierType, pelletPct, distance) : (stats[key] ?? "—"));
+  const getStatValue = (name, stats, key, computed) => (computed ? calcDPS(name, time, multiplierType, accuracyPct, distance) : (stats[key] ?? "—"));
 
   const classRow = `
     <div class="stat-row">
@@ -53,7 +53,7 @@ export const renderSearch = () => {
   const classWeapons = classFilterValue === "all" ? weapons : (WEAPON_CATEGORIES[classFilterValue]?.weapons ?? []);
 
   const time = getInputValue(dpsTime, 10);
-  const pelletPct = getInputValue(pelletHitPercent, 100);
+  const pelletPct = getInputValue(accuracyPercent, 100);
   const distance = getInputValue(dpsDistance, 0);
   const multiplierType = dpsMultiplier.value;
 

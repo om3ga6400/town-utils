@@ -10,5 +10,5 @@ export const searchResults = $("search-results");
 export const dpsRow = document.querySelector(".dps-row");
 export const dpsTime = $("dps-time");
 export const dpsMultiplier = $("dps-multiplier");
-export const pelletHitPercent = $("pellet-hit-percent");
+export const accuracyPercent = $("accuracy-percent");
 export const dpsDistance = $("dps-distance");

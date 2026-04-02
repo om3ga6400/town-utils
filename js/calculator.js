@@ -15,11 +15,11 @@ export const calcDamageAtDistance = (stats, distance = 0) => {
   return maxDamage + (minDamage - maxDamage) * timeRatio;
 };
 
-export const calcDPS = (weaponName, time = 10, multType = "none", pelletHitPct = 100, distance = 0) => {
+export const calcDPS = (weaponName, time = 10, multType = "none", accuracyPct = 100, distance = 0) => {
   const stats = WEAPON_STATS[weaponName];
 
   const multiplier = multType === "none" ? 1 : (stats[`${multType}_multiplier`] ?? 1);
-  const pelletMult = stats.pellet_count ? (stats.pellet_count * pelletHitPct) / 100 : 1;
+  const pelletMult = stats.pellet_count ? (stats.pellet_count * accuracyPct) / 100 : 1;
   const baseDamage = calcDamageAtDistance(stats, distance);
   const totalDamagePerShot = baseDamage * multiplier * pelletMult;
 

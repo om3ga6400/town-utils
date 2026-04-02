@@ -63,7 +63,7 @@
     "equip_speed": 1,
     "aim_speed": 0.5,
     "weight": 32,
-    "ammo": "100",
+    "ammo": "100+1",
     "pellet_count": 1,
     "reload_per_bullet": false,
     "game_pass": false

@@ -1,5 +1,5 @@
 import { WEAPON_STATS, WEAPON_CATEGORIES, weapons, STATS, setWeapons } from "./config.js";
-import { selectLeft, selectRight, classFilter, sortStat, searchInput, sortOrder, dpsTime, dpsMultiplier, pelletHitPercent, dpsDistance, searchResults } from "./dom.js";
+import { selectLeft, selectRight, classFilter, sortStat, searchInput, sortOrder, dpsTime, dpsMultiplier, accuracyPercent, dpsDistance, searchResults } from "./dom.js";
 import { renderComparison, renderSearch, updateUIState } from "./render.js";
 
 const init = () => {
@@ -29,7 +29,7 @@ const init = () => {
   searchInput.addEventListener("input", renderSearch);
   [classFilter, sortOrder].forEach((element) => element.addEventListener("change", renderSearch));
 
-  [dpsTime, dpsMultiplier, pelletHitPercent, dpsDistance].forEach((element) => {
+  [dpsTime, dpsMultiplier, accuracyPercent, dpsDistance].forEach((element) => {
     element.addEventListener("input", reRenderAll);
     element.addEventListener("change", reRenderAll);
   });
