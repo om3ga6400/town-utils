@@ -1,4 +1,24 @@
 {
+  "AS VAL": {
+    "damage_max": 40,
+    "damage_min": 19,
+    "damage_falloff_start": 85,
+    "max_bullet_range": 190,
+    "firerate": 865,
+    "hip_fire_accuracy": 125,
+    "ads_accuracy": 225,
+    "vertical_recoil": 0.25,
+    "horizontal_recoil": 0.33,
+    "head_multiplier": 5.5,
+    "torso_multiplier": 0.78,
+    "limb_multiplier": 0.75,
+    "reload_speed_partial": 2.38,
+    "reload_speed_empty": 3.65,
+    "equip_speed": 0.45,
+    "aim_speed": 0.25,
+    "weight": 7,
+    "ammo": "20+1"
+  },
   "AK-15": {
     "damage_max": 36,
     "damage_min": 24,
@@ -604,26 +624,6 @@
     "equip_speed": 0.6,
     "aim_speed": 0.18,
     "weight": 8,
-    "ammo": "30+1"
-  },
-  "SR-3M Vikhr": {
-    "damage_max": 40,
-    "damage_min": 19,
-    "damage_falloff_start": 85,
-    "max_bullet_range": 190,
-    "firerate": 865,
-    "hip_fire_accuracy": 55,
-    "ads_accuracy": 170.5,
-    "vertical_recoil": 0.3,
-    "horizontal_recoil": 0.33,
-    "head_multiplier": 5.5,
-    "torso_multiplier": 0.78,
-    "limb_multiplier": 0.75,
-    "reload_speed_partial": 2.38,
-    "reload_speed_empty": 3.65,
-    "equip_speed": 0.45,
-    "aim_speed": 0.25,
-    "weight": 6,
     "ammo": "30+1"
   },
   "ShAK-12": {
