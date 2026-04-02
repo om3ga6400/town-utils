@@ -1,13 +1,13 @@
 {
-  "AS VAL": {
+    "SR-3M Vikhr": {
     "damage_max": 40,
     "damage_min": 19,
     "damage_falloff_start": 85,
     "max_bullet_range": 190,
     "firerate": 865,
-    "hip_fire_accuracy": 125,
-    "ads_accuracy": 225,
-    "vertical_recoil": 0.25,
+    "hip_fire_accuracy": 55,
+    "ads_accuracy": 170.5,
+    "vertical_recoil": 0.3,
     "horizontal_recoil": 0.33,
     "head_multiplier": 5.5,
     "torso_multiplier": 0.78,
@@ -16,8 +16,8 @@
     "reload_speed_empty": 3.65,
     "equip_speed": 0.45,
     "aim_speed": 0.25,
-    "weight": 7,
-    "ammo": "20+1"
+    "weight": 6,
+    "ammo": "30+1"
   },
   "HW Jolt": {
     "damage_max": 19,
