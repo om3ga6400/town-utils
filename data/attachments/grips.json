@@ -58,9 +58,7 @@
     "horizontal_recoil": "-20%",
     "accuracy": "8%",
     "aim_speed": "10%",
-    "guns": [
-      "MP7"
-    ]
+    "guns": ["MP7"]
   },
   "Skeleton Grip": {
     "weight": 0.1,
