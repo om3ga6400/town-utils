@@ -1,0 +1,10 @@
+{
+  "Extended Stock": {
+    "weight": 3,
+    "vertical_recoil": "-20%",
+    "horizontal_recoil": "-20%",
+    "accuracy": "12%",
+    "aim_speed": "25%",
+    "muzzle_flip": "-90%"
+  }
+}

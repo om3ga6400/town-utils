@@ -1,0 +1,112 @@
+{
+  "Acog Scope": {
+    "weight": 2,
+    "zoom": 4,
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "20%",
+    "aim_speed": "-10%"
+  },
+  "CL6X Sight": {
+    "weight": 3,
+    "zoom": 6,
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "40%",
+    "aim_speed": "-15%"
+  },
+  "PSO-1 Scope": {
+    "weight": 5,
+    "zoom": 8,
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "60%",
+    "aim_speed": "-15%"
+  },
+  "Kobra Sight": {
+    "weight": 0.2,
+    "zoom": 1.5,
+    "aim_speed": "-20%"
+  },
+  "CCO M68": {
+    "weight": 2,
+    "zoom": 1.7,
+    "aim_speed": "-20%"
+  },
+  "Professional Scope": {
+    "weight": 7,
+    "zoom": 20,
+    "vertical_recoil": "-10%",
+    "horizontal_recoil": "-10%",
+    "accuracy": "75%",
+    "aim_speed": "-20%"
+  },
+  "JGM4 Sight": {
+    "weight": 2,
+    "zoom": 4,
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "20%",
+    "aim_speed": "-10%"
+  },
+  "EOTech Sight": {
+    "weight": 0.5,
+    "zoom": 2,
+    "aim_speed": "-10%"
+  },
+  "M145 Sight": {
+    "weight": 2,
+    "zoom": 4,
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "20%",
+    "aim_speed": "-10%"
+  },
+  "Hunting Scope": {
+    "weight": 5,
+    "zoom": 10,
+    "vertical_recoil": "-10%",
+    "horizontal_recoil": "-10%",
+    "accuracy": "60%",
+    "aim_speed": "-15%"
+  },
+  "Scrap Sight": {
+    "weight": 2,
+    "zoom": 2,
+    "vertical_recoil": "-5%",
+    "horizontal_recoil": "-5%",
+    "accuracy": "20%",
+    "aim_speed": "-10%"
+  },
+  "Holosun 507c": {
+    "weight": 0.2,
+    "zoom": 1,
+    "vertical_recoil": "0%",
+    "horizontal_recoil": "0%",
+    "accuracy": "0%",
+    "aim_speed": "-5%"
+  },
+  "Coyote Sight": {
+    "weight": 0.2,
+    "zoom": 1.5,
+    "vertical_recoil": "0%",
+    "horizontal_recoil": "0%",
+    "accuracy": "0%",
+    "aim_speed": "-20%"
+  },
+  "Reflex Sight": {
+    "weight": 0.5,
+    "zoom": 1,
+    "aim_speed": "-5%"
+  },
+  "SRS Sight": {
+    "weight": 0.2,
+    "zoom": 1.5,
+    "aim_speed": "-20%"
+  },
+  "AEMS Sight": {
+    "weight": 0.2,
+    "zoom": 1.5,
+    "aim_speed": "-20%"
+  }
+}

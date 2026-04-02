@@ -1,0 +1,49 @@
+{
+  "Range Finder": {
+    "weight": 1,
+    "accuracy": "10%",
+    "range_finder": true,
+    "game_pass": true
+  },
+  "Flashlight": {
+    "weight": 0.1
+  },
+  "Inforce Light": {
+    "weight": 0
+  },
+  "TLR-7": {
+    "weight": 0.1
+  },
+  "Red Laser": {
+    "weight": 0.3,
+    "accuracy": "10%",
+    "aim_speed": "-20%"
+  },
+  "Green Laser": {
+    "weight": 0.3,
+    "accuracy": "10%",
+    "aim_speed": "-20%"
+  },
+  "Blue Laser": {
+    "weight": 0.3,
+    "accuracy": "10%",
+    "aim_speed": "-20%",
+    "vertical_recoil": "0%",
+    "equip_speed": "0%"
+  },
+  "NGAL": {
+    "weight": 0.4,
+    "accuracy": "10%",
+    "aim_speed": "-20%",
+    "vertical_recoil": "0%",
+    "equip_speed": "0%"
+  },
+  "Laser MK23": {
+    "weight": 0.7,
+    "accuracy": "10%",
+    "aim_speed": "-50%",
+    "vertical_recoil": "7%",
+    "equip_speed": "110%",
+    "guns": ["USP MK23"]
+  }
+}
