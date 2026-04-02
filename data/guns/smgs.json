@@ -109,28 +109,6 @@
     "pellet_count": 1,
     "reload_per_bullet": false
   },
-  "MP7": {
-    "damage_max": 29,
-    "damage_min": 22,
-    "damage_falloff_start": 100,
-    "max_bullet_range": 225,
-    "firerate": 860,
-    "hip_fire_accuracy": 75,
-    "ads_accuracy": 150,
-    "vertical_recoil": 0.25,
-    "horizontal_recoil": 0.37,
-    "head_multiplier": 4,
-    "torso_multiplier": 1,
-    "limb_multiplier": 0.6,
-    "reload_speed_partial": 2.9,
-    "reload_speed_empty": 3.3,
-    "equip_speed": 0.4,
-    "aim_speed": 0.25,
-    "weight": 5,
-    "ammo": "40+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
-  },
   "MP7A1": {
     "damage_max": 29,
     "damage_min": 22,
