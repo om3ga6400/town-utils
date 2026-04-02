@@ -2,10 +2,9 @@
   "Colt LMG": {
     "damage_max": 33,
     "damage_min": 23,
-    "pellet_count": 1,
+    "firerate": 750,
     "damage_falloff_start": 200,
     "max_bullet_range": 350,
-    "firerate": 750,
     "hip_fire_accuracy": 70,
     "ads_accuracy": 190,
     "vertical_recoil": 0.28,
@@ -19,16 +18,16 @@
     "aim_speed": 0.39,
     "weight": 11,
     "ammo": "60+1",
-    "game_pass": true,
-    "reload_per_bullet": false
+    "pellet_count": 1,
+    "reload_per_bullet": false,
+    "game_pass": true
   },
   "Lewis Automatic Rifle": {
     "damage_max": 30,
     "damage_min": 20,
-    "pellet_count": 1,
+    "firerate": 550,
     "damage_falloff_start": 175,
     "max_bullet_range": 400,
-    "firerate": 550,
     "hip_fire_accuracy": 40,
     "ads_accuracy": 200,
     "vertical_recoil": 0.35,
@@ -42,16 +41,16 @@
     "aim_speed": 0.3,
     "weight": 30,
     "ammo": "97",
-    "game_pass": false,
-    "reload_per_bullet": false
+    "pellet_count": 1,
+    "reload_per_bullet": false,
+    "game_pass": false
   },
   "MG4": {
     "damage_max": 33,
     "damage_min": 23,
-    "pellet_count": 1,
+    "firerate": 700,
     "damage_falloff_start": 175,
     "max_bullet_range": 400,
-    "firerate": 700,
     "hip_fire_accuracy": 60,
     "ads_accuracy": 240,
     "vertical_recoil": 0.3,
@@ -65,16 +64,16 @@
     "aim_speed": 0.5,
     "weight": 32,
     "ammo": "100",
-    "game_pass": false,
-    "reload_per_bullet": false
+    "pellet_count": 1,
+    "reload_per_bullet": false,
+    "game_pass": false
   },
   "RPK": {
     "damage_max": 35,
     "damage_min": 26,
-    "pellet_count": 1,
+    "firerate": 600,
     "damage_falloff_start": 175,
     "max_bullet_range": 400,
-    "firerate": 600,
     "hip_fire_accuracy": 140,
     "ads_accuracy": 280,
     "vertical_recoil": 0.3,
@@ -88,16 +87,16 @@
     "aim_speed": 0.3,
     "weight": 16,
     "ammo": "40+1",
-    "game_pass": false,
-    "reload_per_bullet": false
+    "pellet_count": 1,
+    "reload_per_bullet": false,
+    "game_pass": false
   },
   "RPK-74": {
     "damage_max": 35,
     "damage_min": 29,
-    "pellet_count": 1,
+    "firerate": 580,
     "damage_falloff_start": 250,
     "max_bullet_range": 400,
-    "firerate": 580,
     "hip_fire_accuracy": 120,
     "ads_accuracy": 240,
     "vertical_recoil": 0.29,
@@ -111,7 +110,8 @@
     "aim_speed": 0.6,
     "weight": 22,
     "ammo": "45+1",
-    "game_pass": false,
-    "reload_per_bullet": false
+    "pellet_count": 1,
+    "reload_per_bullet": false,
+    "game_pass": false
   }
 }
