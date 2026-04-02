@@ -17,9 +17,7 @@
     "equip_speed": 1,
     "aim_speed": 0.45,
     "weight": 10,
-    "ammo": "10+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "10+1"
   },
   "GM6 Lynx": {
     "damage_max": 90,
@@ -40,8 +38,6 @@
     "aim_speed": 0.8,
     "weight": 39,
     "ammo": "5+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false,
     "game_pass": true
   },
   "Intervention": {
@@ -62,9 +58,7 @@
     "equip_speed": 1.5,
     "aim_speed": 0.5,
     "weight": 30,
-    "ammo": "7+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "7+1"
   },
   "JNG-90": {
     "damage_max": 65,
@@ -84,9 +78,7 @@
     "equip_speed": 0.8,
     "aim_speed": 0.35,
     "weight": 10,
-    "ammo": "10+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "10+1"
   },
   "L96A1": {
     "damage_max": 85,
@@ -106,9 +98,7 @@
     "equip_speed": 1,
     "aim_speed": 0.45,
     "weight": 14,
-    "ammo": "5+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "5+1"
   },
   "Lee Enfield": {
     "damage_max": 54,
@@ -128,9 +118,7 @@
     "equip_speed": 0.8,
     "aim_speed": 0.4,
     "weight": 8,
-    "ammo": "8",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "8"
   },
   "MK-11": {
     "damage_max": 45,
@@ -150,9 +138,7 @@
     "equip_speed": 0.5,
     "aim_speed": 0.35,
     "weight": 12,
-    "ammo": "20+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "20+1"
   },
   "QBU-88": {
     "damage_max": 40,
@@ -172,9 +158,7 @@
     "equip_speed": 0.6,
     "aim_speed": 0.35,
     "weight": 9,
-    "ammo": "10+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "10+1"
   },
   "QBZ-95": {
     "damage_max": 33,
@@ -194,9 +178,7 @@
     "equip_speed": 0.6,
     "aim_speed": 0.35,
     "weight": 9,
-    "ammo": "30+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "30+1"
   },
   "R700 Hunter": {
     "damage_max": 70,
@@ -216,9 +198,7 @@
     "equip_speed": 0.8,
     "aim_speed": 0.4,
     "weight": 10,
-    "ammo": "5+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "5+1"
   },
   "Steyr Elite": {
     "damage_max": 70,
@@ -238,9 +218,7 @@
     "equip_speed": 1,
     "aim_speed": 0.45,
     "weight": 9,
-    "ammo": "10+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "10+1"
   },
   "Barrett M82A3": {
     "damage_max": 130,
@@ -261,8 +239,6 @@
     "aim_speed": 0.6,
     "weight": 30,
     "ammo": "20",
-    "pellet_count": 1,
-    "reload_per_bullet": false,
     "game_pass": true
   },
   "WA2000": {
@@ -284,8 +260,6 @@
     "aim_speed": 0.45,
     "weight": 18,
     "ammo": "5+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false,
     "game_pass": true
   }
 }

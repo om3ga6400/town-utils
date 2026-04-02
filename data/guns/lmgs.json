@@ -18,8 +18,6 @@
     "aim_speed": 0.39,
     "weight": 11,
     "ammo": "60+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false,
     "game_pass": true
   },
   "Lewis Automatic Rifle": {
@@ -40,9 +38,7 @@
     "equip_speed": 1.75,
     "aim_speed": 0.3,
     "weight": 30,
-    "ammo": "97",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "97"
   },
   "MG4": {
     "damage_max": 33,
@@ -62,9 +58,7 @@
     "equip_speed": 1,
     "aim_speed": 0.5,
     "weight": 32,
-    "ammo": "100",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "100"
   },
   "RPK": {
     "damage_max": 35,
@@ -84,9 +78,7 @@
     "equip_speed": 0.75,
     "aim_speed": 0.3,
     "weight": 16,
-    "ammo": "40+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "40+1"
   },
   "RPK-74": {
     "damage_max": 35,
@@ -106,9 +98,7 @@
     "equip_speed": 0.85,
     "aim_speed": 0.6,
     "weight": 22,
-    "ammo": "45+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false
+    "ammo": "45+1"
   },
   "M1921 Thompson": {
     "damage_max": 25,
@@ -129,8 +119,6 @@
     "aim_speed": 0.3,
     "weight": 8,
     "ammo": "50+1",
-    "pellet_count": 1,
-    "reload_per_bullet": false,
     "game_pass": true
   }
 }
