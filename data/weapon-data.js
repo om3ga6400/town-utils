@@ -1,127 +1,7 @@
-/* ========== WEAPON LIST ==========
-AG-18C
-AG-19
-AK-15
-AK-47
-AR-10
-AR-15
-AS VAL
-AUG A3
-Bryson Repeater
-CZ-75
-Desert Eagle
-Desert Eagle XIX
-Dragunov SVD
-FAMAS G2
-Five SeveN
-G36C
-G3A3
-HK416
-Honey Badger
-HW Cappa
-HW Jolt
-HW Spear
-Intervention
-JNG-90
-L85A2
-L96A1
-Lee Enfield
-Lewis Automatic Rifle
-M1 Garand
-M14A
-M16A1
-M16A2
-M1911
-M37 Featherweight
-M4 Carbine
-M870
-M9
-M950 Helical
-MAC-10
-Magnum Revolver
-Makarov
-MCX LVAW
-MG4
-MK 17 CQC
-MK-11
-MK18
-Model 1777 Musket
-MP40
-MP443
-MP5A2
-MP5K
-MP7
-MPX
-P226
-P90
-Pipe Shotgun
-PPSh-41
-Python
-QBU-88
-QBZ-95
-R700 Hunter
-RFB
-RMK2
-RPK
-RPK-74
-Saddlegun
-SCAR-L
-SG-552 Commando
-SKS
-SOPMOD Block II
-Speed-Six
-SR-2M
-SR-3M Vikhr
-Steyr Elite
-SW 500
-TMP
-Tumor Growth
-UMP-45
-USP Match
-USP MK23
-Uzi
-WA M99
-XM7
-
-========== GAMEPASS GUNS ==========
-
-Barrett M82A3
-Classic Pistol
-Colt LMG
-Cowboy Gun
-CQ300 Lynx
-Double Barrel
-Fail
-FN FAL
-L2A1 SLR
-GM6 Lynx
-Groza-4
-HW Pulper
-Ithaca 37 Stakeout
-KRISS Vector
-Kriss Vector Gen2
-Luger P08
-M1921 Thompson
-M26 MASS
-Nail Gun
-Olympia
-PP2000
-Saiga 12K
-SCAR-H
-Scorpion EVO
-ShAK-12
-SPAS-12
-UNICA 6
-UTS-15
-VSS Vintorez
-WA2000
-Zip .22
-*/
-
 export const WEAPON_CATEGORIES = {
   Rifle: {
     type: "rifle",
-    weapons: ["AK-15", "AK-47", "AR-10", "AR-15", "AUG A3", "Bryson Repeater", "CQ300 Lynx", "FAMAS G2", "G36C", "G3A3", "HK416", "Honey Badger", "HW Spear", "L85A2", "M1 Garand", "M14A", "M14 BR", "M16A1", "M16A2", "M4 Carbine", "MCX LVAW", "MK18", "MK 17 CQC", "RFB", "Saddlegun", "SKS", "SOPMOD Block II", "FN FAL", "L2A1 SLR", "Groza-4", "SCAR-H", "SCAR-L", "SR-3M Vikhr", "ShAK-12", "SG-552 Commando", "VSS Vintorez", "XM7", "XM7-A"],
+    weapons: ["AK-15", "AK-47", "AR-10", "AR-15", "AUG A3", "Bryson Repeater", "CQ300 Lynx", "FAMAS G2", "G36C", "G3A3", "HK416", "Honey Badger", "HW Spear", "L85A2", "M1 Garand", "M14 BR", "M16A1", "M16A2", "M4 Carbine", "MCX LVAW", "MK18", "MK 17 CQC", "RFB", "Saddlegun", "SKS", "SOPMOD Block II", "FN FAL", "L2A1 SLR", "Groza-4", "SCAR-H", "SCAR-L", "SR-3M Vikhr", "ShAK-12", "SG-552 Commando", "VSS Vintorez", "XM7", "XM7-A"],
   },
   SMG: {
     type: "smg",
@@ -2451,29 +2331,6 @@ export const WEAPON_STATS = {
     reload_per_bullet: false,
     game_pass: true,
   },
-  M14A: {
-    damage_max: 55,
-    damage_min: 40,
-    damage_falloff_start: 175,
-    max_bullet_range: 450,
-    firerate: 180.18,
-    hip_fire_accuracy: 118,
-    ads_accuracy: 295,
-    vertical_recoil: 0.75,
-    horizontal_recoil: 0.75,
-    head_multiplier: 4,
-    torso_multiplier: 1.5,
-    limb_multiplier: 0.5,
-    reload_speed_partial: 3,
-    reload_speed_empty: 3.5,
-    equip_speed: 0.6,
-    aim_speed: 0.18,
-    weight: 8,
-    ammo: "10+1",
-    pellet_count: 1,
-    reload_per_bullet: false,
-    game_pass: true,
-  },
   "M14 BR": {
     damage_max: 53,
     damage_min: 44,
@@ -2656,7 +2513,7 @@ export const WEAPON_STATS = {
     ammo: "20+1",
     pellet_count: 1,
     reload_per_bullet: false,
-    game_pass: true,
+    game_pass: false,
   },
   "SCAR-L": {
     damage_max: 33,
@@ -2679,7 +2536,7 @@ export const WEAPON_STATS = {
     ammo: "30+1",
     pellet_count: 1,
     reload_per_bullet: false,
-    game_pass: true,
+    game_pass: false,
   },
   "Scorpion EVO": {
     damage_max: 18,
