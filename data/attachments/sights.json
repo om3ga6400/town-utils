@@ -5,7 +5,8 @@
     "vertical_recoil": "-5%",
     "horizontal_recoil": "-5%",
     "accuracy": "20%",
-    "aim_speed": "-10%"
+    "aim_speed": "-10%",
+    "game_pass": false
   },
   "CL6X Sight": {
     "weight": 3,
@@ -13,7 +14,8 @@
     "vertical_recoil": "-5%",
     "horizontal_recoil": "-5%",
     "accuracy": "40%",
-    "aim_speed": "-15%"
+    "aim_speed": "-15%",
+    "game_pass": false
   },
   "PSO-1 Scope": {
     "weight": 5,
@@ -21,17 +23,20 @@
     "vertical_recoil": "-5%",
     "horizontal_recoil": "-5%",
     "accuracy": "60%",
-    "aim_speed": "-15%"
+    "aim_speed": "-15%",
+    "game_pass": false
   },
   "Kobra Sight": {
     "weight": 0.2,
     "zoom": 1.5,
-    "aim_speed": "-20%"
+    "aim_speed": "-20%",
+    "game_pass": false
   },
   "CCO M68": {
     "weight": 2,
     "zoom": 1.7,
-    "aim_speed": "-20%"
+    "aim_speed": "-20%",
+    "game_pass": false
   },
   "Professional Scope": {
     "weight": 7,
@@ -39,7 +44,8 @@
     "vertical_recoil": "-10%",
     "horizontal_recoil": "-10%",
     "accuracy": "75%",
-    "aim_speed": "-20%"
+    "aim_speed": "-20%",
+    "game_pass": false
   },
   "JGM4 Sight": {
     "weight": 2,
@@ -47,12 +53,14 @@
     "vertical_recoil": "-5%",
     "horizontal_recoil": "-5%",
     "accuracy": "20%",
-    "aim_speed": "-10%"
+    "aim_speed": "-10%",
+    "game_pass": false
   },
   "EOTech Sight": {
     "weight": 0.5,
     "zoom": 2,
-    "aim_speed": "-10%"
+    "aim_speed": "-10%",
+    "game_pass": false
   },
   "M145 Sight": {
     "weight": 2,
@@ -60,7 +68,8 @@
     "vertical_recoil": "-5%",
     "horizontal_recoil": "-5%",
     "accuracy": "20%",
-    "aim_speed": "-10%"
+    "aim_speed": "-10%",
+    "game_pass": false
   },
   "Hunting Scope": {
     "weight": 5,
@@ -68,7 +77,8 @@
     "vertical_recoil": "-10%",
     "horizontal_recoil": "-10%",
     "accuracy": "60%",
-    "aim_speed": "-15%"
+    "aim_speed": "-15%",
+    "game_pass": false
   },
   "Scrap Sight": {
     "weight": 2,
@@ -76,7 +86,8 @@
     "vertical_recoil": "-5%",
     "horizontal_recoil": "-5%",
     "accuracy": "20%",
-    "aim_speed": "-10%"
+    "aim_speed": "-10%",
+    "game_pass": false
   },
   "Holosun 507c": {
     "weight": 0.2,
@@ -84,7 +95,8 @@
     "vertical_recoil": "0%",
     "horizontal_recoil": "0%",
     "accuracy": "0%",
-    "aim_speed": "-5%"
+    "aim_speed": "-5%",
+    "game_pass": false
   },
   "Coyote Sight": {
     "weight": 0.2,
@@ -92,21 +104,25 @@
     "vertical_recoil": "0%",
     "horizontal_recoil": "0%",
     "accuracy": "0%",
-    "aim_speed": "-20%"
+    "aim_speed": "-20%",
+    "game_pass": false
   },
   "Reflex Sight": {
     "weight": 0.5,
     "zoom": 1,
-    "aim_speed": "-5%"
+    "aim_speed": "-5%",
+    "game_pass": false
   },
   "SRS Sight": {
     "weight": 0.2,
     "zoom": 1.5,
-    "aim_speed": "-20%"
+    "aim_speed": "-20%",
+    "game_pass": false
   },
   "AEMS Sight": {
     "weight": 0.2,
     "zoom": 1.5,
-    "aim_speed": "-20%"
+    "aim_speed": "-20%",
+    "game_pass": false
   }
 }

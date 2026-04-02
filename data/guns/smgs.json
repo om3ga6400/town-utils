@@ -2,6 +2,7 @@
   "SR-3M Vikhr": {
     "damage_max": 40,
     "damage_min": 19,
+    "pellet_count": 1,
     "damage_falloff_start": 85,
     "max_bullet_range": 190,
     "firerate": 865,
@@ -17,11 +18,14 @@
     "equip_speed": 0.45,
     "aim_speed": 0.25,
     "weight": 6,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "HW Jolt": {
     "damage_max": 19,
     "damage_min": 9,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 200,
     "firerate": 670,
@@ -37,11 +41,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.3,
     "weight": 4,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "MP40": {
     "damage_max": 20,
     "damage_min": 15,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 575,
@@ -57,11 +64,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 8,
-    "ammo": "32"
+    "ammo": "32",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "MP5A2": {
     "damage_max": 14,
     "damage_min": 8,
+    "pellet_count": 1,
     "damage_falloff_start": 130,
     "max_bullet_range": 270,
     "firerate": 815,
@@ -77,11 +87,14 @@
     "equip_speed": 0.5,
     "aim_speed": 0.15,
     "weight": 5,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "MP5K": {
     "damage_max": 18,
     "damage_min": 9,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 885,
@@ -97,11 +110,14 @@
     "equip_speed": 0.4,
     "aim_speed": 0.15,
     "weight": 4,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "MP7A1": {
     "damage_max": 29,
     "damage_min": 22,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 860,
@@ -117,11 +133,14 @@
     "equip_speed": 0.3,
     "aim_speed": 0.25,
     "weight": 5,
-    "ammo": "40+1"
+    "ammo": "40+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "MPX": {
     "damage_max": 25,
     "damage_min": 18,
+    "pellet_count": 1,
     "damage_falloff_start": 120,
     "max_bullet_range": 200,
     "firerate": 800,
@@ -137,11 +156,14 @@
     "equip_speed": 0.5,
     "aim_speed": 0.2,
     "weight": 6,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "P90": {
     "damage_max": 27,
     "damage_min": 21,
+    "pellet_count": 1,
     "damage_falloff_start": 125,
     "max_bullet_range": 270,
     "firerate": 910,
@@ -157,11 +179,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.35,
     "weight": 8,
-    "ammo": "50+1"
+    "ammo": "50+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "PPSH-41": {
     "damage_max": 20,
     "damage_min": 10,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 1000,
@@ -177,11 +202,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 10,
-    "ammo": "71"
+    "ammo": "71",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "SR-2M": {
     "damage_max": 33,
     "damage_min": 25,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 900,
@@ -197,11 +225,14 @@
     "equip_speed": 0.4,
     "aim_speed": 0.3,
     "weight": 4,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "TMP": {
     "damage_max": 18,
     "damage_min": 9,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 250,
     "firerate": 850,
@@ -217,11 +248,14 @@
     "equip_speed": 0.4,
     "aim_speed": 0.1,
     "weight": 4.5,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "UMP-45": {
     "damage_max": 25,
     "damage_min": 15,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 700,
@@ -237,11 +271,14 @@
     "equip_speed": 0.4,
     "aim_speed": 0.25,
     "weight": 5,
-    "ammo": "25+1"
+    "ammo": "25+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "Uzi": {
     "damage_max": 25,
     "damage_min": 17,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 650,
@@ -257,11 +294,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 8,
-    "ammo": "32+1"
+    "ammo": "32+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "PP2000": {
     "damage_max": 24,
     "damage_min": 17,
+    "pellet_count": 1,
     "damage_falloff_start": 80,
     "max_bullet_range": 140,
     "firerate": 760,
@@ -278,11 +318,13 @@
     "aim_speed": 0.25,
     "weight": 3,
     "ammo": "40+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "KRISS Vector": {
     "damage_max": 20,
     "damage_min": 10,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 1000,
@@ -299,11 +341,13 @@
     "aim_speed": 0.25,
     "weight": 8,
     "ammo": "33+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "Kriss Vector Gen2": {
     "damage_max": 20,
     "damage_min": 10,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 1000,
@@ -320,11 +364,13 @@
     "aim_speed": 0.2,
     "weight": 4,
     "ammo": "33+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "Scorpion EVO": {
     "damage_max": 18,
     "damage_min": 9,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 900,
@@ -341,11 +387,13 @@
     "aim_speed": 0.15,
     "weight": 6,
     "ammo": "30+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "M950 Helical": {
     "damage_max": 15,
     "damage_min": 10,
+    "pellet_count": 1,
     "damage_falloff_start": 300,
     "max_bullet_range": 900,
     "firerate": 750,
@@ -361,6 +409,31 @@
     "equip_speed": 0.4,
     "aim_speed": 0.1,
     "weight": 5,
-    "ammo": "50+1"
+    "ammo": "50+1",
+    "game_pass": false,
+    "reload_per_bullet": false
+  },
+  "M1921 Thompson": {
+    "damage_max": 25,
+    "damage_min": 15,
+    "pellet_count": 1,
+    "damage_falloff_start": 130,
+    "max_bullet_range": 280,
+    "firerate": 720,
+    "hip_fire_accuracy": 65,
+    "ads_accuracy": 156,
+    "vertical_recoil": 0.2,
+    "horizontal_recoil": 0.65,
+    "head_multiplier": 7.5,
+    "torso_multiplier": 1.75,
+    "limb_multiplier": 0.5,
+    "reload_speed_partial": 3.5,
+    "reload_speed_empty": 4,
+    "equip_speed": 0.6,
+    "aim_speed": 0.3,
+    "weight": 8,
+    "ammo": "50+1",
+    "game_pass": true,
+    "reload_per_bullet": false
   }
 }

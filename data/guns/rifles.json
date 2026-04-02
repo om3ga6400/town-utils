@@ -2,6 +2,7 @@
   "AS VAL": {
     "damage_max": 40,
     "damage_min": 19,
+    "pellet_count": 1,
     "damage_falloff_start": 85,
     "max_bullet_range": 190,
     "firerate": 865,
@@ -17,11 +18,14 @@
     "equip_speed": 0.45,
     "aim_speed": 0.25,
     "weight": 7,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "AK-15": {
     "damage_max": 36,
     "damage_min": 24,
+    "pellet_count": 1,
     "damage_falloff_start": 125,
     "max_bullet_range": 300,
     "firerate": 660,
@@ -37,11 +41,14 @@
     "equip_speed": 0.45,
     "aim_speed": 0.2,
     "weight": 7,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "AK-47": {
     "damage_max": 35,
     "damage_min": 26,
+    "pellet_count": 1,
     "damage_falloff_start": 150,
     "max_bullet_range": 350,
     "firerate": 625,
@@ -57,11 +64,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 8,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "AR-10": {
     "damage_max": 45,
     "damage_min": 33,
+    "pellet_count": 1,
     "damage_falloff_start": 200,
     "max_bullet_range": 400,
     "firerate": 450,
@@ -77,11 +87,14 @@
     "equip_speed": 0.65,
     "aim_speed": 0.35,
     "weight": 9,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "AR-15": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 350,
     "firerate": 750,
@@ -97,11 +110,14 @@
     "equip_speed": 0.4,
     "aim_speed": 0.17,
     "weight": 7,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "AUG A3": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 175,
     "max_bullet_range": 350,
     "firerate": 710,
@@ -117,11 +133,14 @@
     "equip_speed": 0.75,
     "aim_speed": 0.3,
     "weight": 9,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "Bryson Repeater": {
     "damage_max": 46,
     "damage_min": 33,
+    "pellet_count": 1,
     "damage_falloff_start": 230,
     "max_bullet_range": 450,
     "firerate": 90,
@@ -138,11 +157,13 @@
     "aim_speed": 0.2,
     "weight": 8,
     "ammo": "8",
+    "game_pass": false,
     "reload_per_bullet": true
   },
   "CQ300 Lynx": {
     "damage_max": 30,
     "damage_min": 15,
+    "pellet_count": 1,
     "damage_falloff_start": 130,
     "max_bullet_range": 230,
     "firerate": 820,
@@ -159,11 +180,13 @@
     "aim_speed": 0.11,
     "weight": 5.5,
     "ammo": "30+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "FAMAS G2": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 150,
     "max_bullet_range": 350,
     "firerate": 863.31,
@@ -179,11 +202,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 8,
-    "ammo": "25+1"
+    "ammo": "25+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "G36C": {
     "damage_max": 40,
     "damage_min": 30,
+    "pellet_count": 1,
     "damage_falloff_start": 150,
     "max_bullet_range": 350,
     "firerate": 750,
@@ -199,11 +225,14 @@
     "equip_speed": 0.4,
     "aim_speed": 0.25,
     "weight": 6,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "G3A3": {
     "damage_max": 53,
     "damage_min": 44,
+    "pellet_count": 1,
     "damage_falloff_start": 175,
     "max_bullet_range": 400,
     "firerate": 480,
@@ -219,11 +248,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.3,
     "weight": 12,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "HK416": {
     "damage_max": 40,
     "damage_min": 30,
+    "pellet_count": 1,
     "damage_falloff_start": 150,
     "max_bullet_range": 350,
     "firerate": 780,
@@ -239,11 +271,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 9,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "Honey Badger": {
     "damage_max": 30,
     "damage_min": 15,
+    "pellet_count": 1,
     "damage_falloff_start": 130,
     "max_bullet_range": 230,
     "firerate": 800,
@@ -259,11 +294,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.2,
     "weight": 6.5,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "HW Spear": {
     "damage_max": 25,
     "damage_min": 16,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 280,
     "firerate": 400,
@@ -279,11 +317,14 @@
     "equip_speed": 0.5,
     "aim_speed": 0.34,
     "weight": 4,
-    "ammo": "10+1"
+    "ammo": "10+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "L85A2": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 150,
     "max_bullet_range": 350,
     "firerate": 700,
@@ -299,11 +340,14 @@
     "equip_speed": 0.8,
     "aim_speed": 0.3,
     "weight": 10,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "M1 Garand": {
     "damage_max": 60,
     "damage_min": 45,
+    "pellet_count": 1,
     "damage_falloff_start": 200,
     "max_bullet_range": 400,
     "firerate": 300,
@@ -319,11 +363,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.3,
     "weight": 12,
-    "ammo": "8"
+    "ammo": "8",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "M16A1": {
     "damage_max": 20,
     "damage_min": 16,
+    "pellet_count": 1,
     "damage_falloff_start": 130,
     "max_bullet_range": 375,
     "firerate": 833.33,
@@ -339,11 +386,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.18,
     "weight": 8,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "M16A2": {
     "damage_max": 20,
     "damage_min": 16,
+    "pellet_count": 1,
     "damage_falloff_start": 175,
     "max_bullet_range": 375,
     "firerate": 750,
@@ -359,11 +409,14 @@
     "equip_speed": 0.5,
     "aim_speed": 0.25,
     "weight": 8,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "M4 Carbine": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 150,
     "max_bullet_range": 350,
     "firerate": 800,
@@ -379,11 +432,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 8,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "MCX LVAW": {
     "damage_max": 30,
     "damage_min": 15,
+    "pellet_count": 1,
     "damage_falloff_start": 110,
     "max_bullet_range": 230,
     "firerate": 815,
@@ -399,11 +455,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 7,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "MK18": {
     "damage_max": 40,
     "damage_min": 30,
+    "pellet_count": 1,
     "damage_falloff_start": 150,
     "max_bullet_range": 350,
     "firerate": 800,
@@ -419,11 +478,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.18,
     "weight": 8,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "MK 17 CQC": {
     "damage_max": 40,
     "damage_min": 30,
+    "pellet_count": 1,
     "damage_falloff_start": 175,
     "max_bullet_range": 300,
     "firerate": 620,
@@ -439,11 +501,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 8,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "RFB": {
     "damage_max": 45,
     "damage_min": 34,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 500,
     "firerate": 600,
@@ -459,11 +524,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.35,
     "weight": 10,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "Saddlegun": {
     "damage_max": 55,
     "damage_min": 22,
+    "pellet_count": 1,
     "damage_falloff_start": 60,
     "max_bullet_range": 180,
     "firerate": 100,
@@ -480,11 +548,13 @@
     "aim_speed": 0.2,
     "weight": 4,
     "ammo": "8",
+    "game_pass": false,
     "reload_per_bullet": true
   },
   "SKS": {
     "damage_max": 40,
     "damage_min": 30,
+    "pellet_count": 1,
     "damage_falloff_start": 175,
     "max_bullet_range": 400,
     "firerate": 600,
@@ -501,11 +571,13 @@
     "aim_speed": 0.25,
     "weight": 8.5,
     "ammo": "20+1",
+    "game_pass": false,
     "reload_per_bullet": true
   },
   "SOPMOD Block II": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 150,
     "max_bullet_range": 350,
     "firerate": 800,
@@ -521,11 +593,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 8,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "FN FAL": {
     "damage_max": 65,
     "damage_min": 51,
+    "pellet_count": 1,
     "damage_falloff_start": 225,
     "max_bullet_range": 400,
     "firerate": 500,
@@ -542,11 +617,13 @@
     "aim_speed": 0.45,
     "weight": 15,
     "ammo": "30+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "L2A1 SLR": {
     "damage_max": 60,
     "damage_min": 25,
+    "pellet_count": 1,
     "damage_falloff_start": 225,
     "max_bullet_range": 400,
     "firerate": 500,
@@ -563,11 +640,13 @@
     "aim_speed": 0.45,
     "weight": 15,
     "ammo": "30+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "Groza-4": {
     "damage_max": 40,
     "damage_min": 12.5,
+    "pellet_count": 1,
     "damage_falloff_start": 150,
     "max_bullet_range": 275,
     "firerate": 750,
@@ -584,11 +663,13 @@
     "aim_speed": 0.25,
     "weight": 8,
     "ammo": "30+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "SCAR-H": {
     "damage_max": 45,
     "damage_min": 33,
+    "pellet_count": 1,
     "damage_falloff_start": 225,
     "max_bullet_range": 400,
     "firerate": 600,
@@ -604,11 +685,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.35,
     "weight": 10,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "SCAR-L": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 300,
     "firerate": 650,
@@ -624,11 +708,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.18,
     "weight": 8,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "ShAK-12": {
     "damage_max": 70,
     "damage_min": 35,
+    "pellet_count": 1,
     "damage_falloff_start": 120,
     "max_bullet_range": 160,
     "firerate": 430,
@@ -645,11 +732,13 @@
     "aim_speed": 0.32,
     "weight": 13,
     "ammo": "20+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "SG-552 Commando": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 150,
     "max_bullet_range": 275,
     "firerate": 800,
@@ -665,11 +754,14 @@
     "equip_speed": 0.35,
     "aim_speed": 0.2,
     "weight": 6,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "VSS Vintorez": {
     "damage_max": 50,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 65,
     "max_bullet_range": 260,
     "firerate": 865,
@@ -685,11 +777,14 @@
     "equip_speed": 0.45,
     "aim_speed": 0.25,
     "weight": 7,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "XM7": {
     "damage_max": 65,
     "damage_min": 50,
+    "pellet_count": 1,
     "damage_falloff_start": 300,
     "max_bullet_range": 350,
     "firerate": 300,
@@ -705,11 +800,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.38,
     "weight": 13,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "XM7-A": {
     "damage_max": 55,
     "damage_min": 40,
+    "pellet_count": 1,
     "damage_falloff_start": 200,
     "max_bullet_range": 350,
     "firerate": 685,
@@ -725,11 +823,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.21,
     "weight": 9,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "M14 BR": {
     "damage_max": 53,
     "damage_min": 44,
+    "pellet_count": 1,
     "damage_falloff_start": 175,
     "max_bullet_range": 450,
     "firerate": 685,
@@ -745,6 +846,8 @@
     "equip_speed": 0.6,
     "aim_speed": 0.4,
     "weight": 12,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   }
 }

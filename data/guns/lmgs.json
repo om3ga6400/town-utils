@@ -2,6 +2,7 @@
   "Colt LMG": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 200,
     "max_bullet_range": 350,
     "firerate": 750,
@@ -18,11 +19,13 @@
     "aim_speed": 0.39,
     "weight": 11,
     "ammo": "60+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "Lewis Automatic Rifle": {
     "damage_max": 30,
     "damage_min": 20,
+    "pellet_count": 1,
     "damage_falloff_start": 175,
     "max_bullet_range": 400,
     "firerate": 550,
@@ -38,11 +41,14 @@
     "equip_speed": 1.75,
     "aim_speed": 0.3,
     "weight": 30,
-    "ammo": "97"
+    "ammo": "97",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "MG4": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 175,
     "max_bullet_range": 400,
     "firerate": 700,
@@ -58,11 +64,14 @@
     "equip_speed": 1,
     "aim_speed": 0.5,
     "weight": 32,
-    "ammo": "100"
+    "ammo": "100",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "RPK": {
     "damage_max": 35,
     "damage_min": 26,
+    "pellet_count": 1,
     "damage_falloff_start": 175,
     "max_bullet_range": 400,
     "firerate": 600,
@@ -78,11 +87,14 @@
     "equip_speed": 0.75,
     "aim_speed": 0.3,
     "weight": 16,
-    "ammo": "40+1"
+    "ammo": "40+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "RPK-74": {
     "damage_max": 35,
     "damage_min": 29,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 400,
     "firerate": 580,
@@ -98,27 +110,8 @@
     "equip_speed": 0.85,
     "aim_speed": 0.6,
     "weight": 22,
-    "ammo": "45+1"
-  },
-  "M1921 Thompson": {
-    "damage_max": 25,
-    "damage_min": 15,
-    "damage_falloff_start": 130,
-    "max_bullet_range": 280,
-    "firerate": 720,
-    "hip_fire_accuracy": 65,
-    "ads_accuracy": 156,
-    "vertical_recoil": 0.2,
-    "horizontal_recoil": 0.65,
-    "head_multiplier": 7.5,
-    "torso_multiplier": 1.75,
-    "limb_multiplier": 0.5,
-    "reload_speed_partial": 3.5,
-    "reload_speed_empty": 4,
-    "equip_speed": 0.6,
-    "aim_speed": 0.3,
-    "weight": 8,
-    "ammo": "50+1",
-    "game_pass": true
+    "ammo": "45+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   }
 }

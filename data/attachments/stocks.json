@@ -5,6 +5,7 @@
     "horizontal_recoil": "-20%",
     "accuracy": "12%",
     "aim_speed": "25%",
-    "muzzle_flip": "-90%"
+    "muzzle_flip": "-90%",
+    "game_pass": false
   }
 }

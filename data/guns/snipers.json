@@ -2,6 +2,7 @@
   "Dragunov SVD": {
     "damage_max": 80,
     "damage_min": 50,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 600,
     "firerate": 140,
@@ -17,11 +18,14 @@
     "equip_speed": 1,
     "aim_speed": 0.45,
     "weight": 10,
-    "ammo": "10+1"
+    "ammo": "10+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "GM6 Lynx": {
     "damage_max": 90,
     "damage_min": 70,
+    "pellet_count": 1,
     "damage_falloff_start": 275,
     "max_bullet_range": 650,
     "firerate": 200,
@@ -38,11 +42,13 @@
     "aim_speed": 0.8,
     "weight": 39,
     "ammo": "5+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "Intervention": {
     "damage_max": 130,
     "damage_min": 110,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 600,
     "firerate": 50,
@@ -58,11 +64,14 @@
     "equip_speed": 1.5,
     "aim_speed": 0.5,
     "weight": 30,
-    "ammo": "7+1"
+    "ammo": "7+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "JNG-90": {
     "damage_max": 65,
     "damage_min": 58,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 600,
     "firerate": 75,
@@ -78,11 +87,14 @@
     "equip_speed": 0.8,
     "aim_speed": 0.35,
     "weight": 10,
-    "ammo": "10+1"
+    "ammo": "10+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "L96A1": {
     "damage_max": 85,
     "damage_min": 35,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 600,
     "firerate": 40,
@@ -98,11 +110,14 @@
     "equip_speed": 1,
     "aim_speed": 0.45,
     "weight": 14,
-    "ammo": "5+1"
+    "ammo": "5+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "Lee Enfield": {
     "damage_max": 54,
     "damage_min": 38,
+    "pellet_count": 1,
     "damage_falloff_start": 200,
     "max_bullet_range": 400,
     "firerate": 55,
@@ -118,11 +133,14 @@
     "equip_speed": 0.8,
     "aim_speed": 0.4,
     "weight": 8,
-    "ammo": "8"
+    "ammo": "8",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "MK-11": {
     "damage_max": 45,
     "damage_min": 30,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 500,
     "firerate": 400,
@@ -138,11 +156,14 @@
     "equip_speed": 0.5,
     "aim_speed": 0.35,
     "weight": 12,
-    "ammo": "20+1"
+    "ammo": "20+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "QBU-88": {
     "damage_max": 40,
     "damage_min": 30,
+    "pellet_count": 1,
     "damage_falloff_start": 280,
     "max_bullet_range": 500,
     "firerate": 450,
@@ -158,11 +179,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.35,
     "weight": 9,
-    "ammo": "10+1"
+    "ammo": "10+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "QBZ-95": {
     "damage_max": 33,
     "damage_min": 23,
+    "pellet_count": 1,
     "damage_falloff_start": 190,
     "max_bullet_range": 350,
     "firerate": 670,
@@ -178,11 +202,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.35,
     "weight": 9,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "R700 Hunter": {
     "damage_max": 70,
     "damage_min": 45,
+    "pellet_count": 1,
     "damage_falloff_start": 200,
     "max_bullet_range": 450,
     "firerate": 44,
@@ -198,11 +225,14 @@
     "equip_speed": 0.8,
     "aim_speed": 0.4,
     "weight": 10,
-    "ammo": "5+1"
+    "ammo": "5+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "Steyr Elite": {
     "damage_max": 70,
     "damage_min": 35,
+    "pellet_count": 1,
     "damage_falloff_start": 200,
     "max_bullet_range": 600,
     "firerate": 55,
@@ -218,11 +248,14 @@
     "equip_speed": 1,
     "aim_speed": 0.45,
     "weight": 9,
-    "ammo": "10+1"
+    "ammo": "10+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "Barrett M82A3": {
     "damage_max": 130,
     "damage_min": 75,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 600,
     "firerate": 170,
@@ -239,11 +272,13 @@
     "aim_speed": 0.6,
     "weight": 30,
     "ammo": "20",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "WA2000": {
     "damage_max": 80,
     "damage_min": 60,
+    "pellet_count": 1,
     "damage_falloff_start": 300,
     "max_bullet_range": 600,
     "firerate": 90,
@@ -260,6 +295,7 @@
     "aim_speed": 0.45,
     "weight": 18,
     "ammo": "5+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   }
 }

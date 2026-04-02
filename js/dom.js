@@ -1,0 +1,14 @@
+export const $ = (id) => document.getElementById(id);
+export const selectLeft = $("weapon-left");
+export const selectRight = $("weapon-right");
+export const output = $("stats-output");
+export const searchInput = $("search-input");
+export const classFilter = $("class-filter");
+export const sortStat = $("sort-stat");
+export const sortOrder = $("sort-order");
+export const searchResults = $("search-results");
+export const dpsRow = document.querySelector(".dps-row");
+export const dpsTime = $("dps-time");
+export const dpsMultiplier = $("dps-multiplier");
+export const pelletHitPercent = $("pellet-hit-percent");
+export const dpsDistance = $("dps-distance");

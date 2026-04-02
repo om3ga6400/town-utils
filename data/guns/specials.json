@@ -2,6 +2,7 @@
   "Tumor Growth": {
     "damage_max": 20,
     "damage_min": 15,
+    "pellet_count": 1,
     "damage_falloff_start": 100,
     "max_bullet_range": 225,
     "firerate": 666.67,
@@ -17,11 +18,14 @@
     "equip_speed": 0.6,
     "aim_speed": 0.25,
     "weight": 8,
-    "ammo": "30+1"
+    "ammo": "30+1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "Classic Pistol": {
     "damage_max": 5,
     "damage_min": 5,
+    "pellet_count": 1,
     "damage_falloff_start": 900,
     "max_bullet_range": 900,
     "firerate": 600,
@@ -38,11 +42,13 @@
     "aim_speed": 0.1,
     "weight": 3,
     "ammo": "inf",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "Fail": {
     "damage_max": 5,
     "damage_min": 4,
+    "pellet_count": 1,
     "damage_falloff_start": 200,
     "max_bullet_range": 250,
     "firerate": 600,
@@ -59,11 +65,13 @@
     "aim_speed": 0.1,
     "weight": 8,
     "ammo": "inf",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "Model 1777 Musket": {
     "damage_max": 65,
     "damage_min": 40,
+    "pellet_count": 1,
     "damage_falloff_start": 250,
     "max_bullet_range": 500,
     "firerate": 60,
@@ -79,11 +87,14 @@
     "equip_speed": 1.25,
     "aim_speed": 0.5,
     "weight": 15,
-    "ammo": "1"
+    "ammo": "1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "Nail Gun": {
     "damage_max": 15,
     "damage_min": 1,
+    "pellet_count": 1,
     "damage_falloff_start": 8,
     "max_bullet_range": 20,
     "firerate": 600,
@@ -100,6 +111,7 @@
     "aim_speed": 0.15,
     "weight": 10,
     "ammo": "60",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   }
 }

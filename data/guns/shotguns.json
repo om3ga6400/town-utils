@@ -18,7 +18,9 @@
     "equip_speed": 0.6,
     "aim_speed": 0.32,
     "weight": 8,
-    "ammo": "1"
+    "ammo": "1",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "M870": {
     "damage_max": 15,
@@ -40,7 +42,8 @@
     "aim_speed": 0.35,
     "weight": 10,
     "ammo": "8",
-    "reload_per_bullet": true
+    "reload_per_bullet": true,
+    "game_pass": false
   },
   "Dmk-12": {
     "damage_max": 26,
@@ -61,7 +64,9 @@
     "equip_speed": 0.6,
     "aim_speed": 0.5,
     "weight": 9,
-    "ammo": "8"
+    "ammo": "8",
+    "game_pass": false,
+    "reload_per_bullet": false
   },
   "M37 Featherweight": {
     "damage_max": 15,
@@ -106,7 +111,8 @@
     "aim_speed": 0.35,
     "weight": 16,
     "ammo": "2",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "HW Pulper": {
     "damage_max": 7,
@@ -173,7 +179,9 @@
     "aim_speed": 0.3,
     "weight": 6,
     "ammo": "10+1",
-    "game_pass": true
+    "game_pass": true,
+    "pellet_count": 1,
+    "reload_per_bullet": false
   },
   "Olympia": {
     "damage_max": 95,
@@ -194,7 +202,9 @@
     "aim_speed": 0.3,
     "weight": 12,
     "ammo": "2",
-    "game_pass": true
+    "game_pass": true,
+    "pellet_count": 1,
+    "reload_per_bullet": false
   },
   "Saiga 12K": {
     "damage_max": 1,
@@ -216,7 +226,8 @@
     "aim_speed": 0.35,
     "weight": 8,
     "ammo": "5+1",
-    "game_pass": true
+    "game_pass": true,
+    "reload_per_bullet": false
   },
   "SPAS-12": {
     "damage_max": 10,
