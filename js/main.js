@@ -94,7 +94,7 @@ const calcDPS = (weaponName, time = 10, multType = "none", pelletHitPct = 100, d
 
   const ammo = parseAmmo(stats.ammo);
   const rps = (stats.firerate || 0) / 60; // Rounds per second
-  
+
   if (ammo === Infinity) {
     return Math.round(((1 + time * rps) * totalDamagePerShot) / time);
   }
