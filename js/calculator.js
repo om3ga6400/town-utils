@@ -27,7 +27,7 @@ export const calcDPS = (weaponName, time = 10, multType = "none", accuracyPct = 
   const rps = (stats.firerate || 0) / 60;
 
   if (ammo === Infinity) {
-    return Math.round(((1 + time * rps) * totalDamagePerShot) / time);
+    return Math.round(((1 + Math.floor(time * rps)) * totalDamagePerShot) / time);
   }
 
   const reloadTime = stats.reload_per_bullet ? ammo * stats.reload_speed_empty : stats.reload_speed_empty;
@@ -36,5 +36,9 @@ export const calcDPS = (weaponName, time = 10, multType = "none", accuracyPct = 
   const remainingTime = time - fullCycles * cycleTime;
   const remainingShots = Math.min(ammo, 1 + Math.floor(remainingTime * rps));
 
-  return Math.round(((fullCycles * ammo + remainingShots) * totalDamagePerShot) / time);
+  // Use at least one full reload cycle as the effective time window to prevent
+  // burst-DPS inflation when the selected time is shorter than one magazine cycle
+  const effectiveTime = Math.max(time, cycleTime);
+
+  return Math.round(((fullCycles * ammo + remainingShots) * totalDamagePerShot) / effectiveTime);
 };
