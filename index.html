@@ -7,7 +7,16 @@
     <div class="search-card">
       <div class="filter-row">
         <input type="text" id="search-input" placeholder="Search" />
-        <select id="class-filter"></select>
+        <select id="class-filter">
+          <option value="all">All Guns</option>
+          <option value="LMGs">LMGs</option>
+          <option value="Pistols">Pistols</option>
+          <option value="Rifles">Rifles</option>
+          <option value="Shotguns">Shotguns</option>
+          <option value="SMGs">SMGs</option>
+          <option value="Snipers">Snipers</option>
+          <option value="Specials">Specials</option>
+        </select>
       </div>
       <div class="filter-row">
         <select id="sort-stat"></select>
@@ -35,7 +44,14 @@
 
     <div class="card">
       <div class="controls">
-        <select id="compare-category"></select>
+        <select id="compare-category">
+          <option value="Guns">Guns</option>
+          <option value="Barrels">Barrels</option>
+          <option value="Grips">Grips</option>
+          <option value="Others">Others</option>
+          <option value="Sights">Sights</option>
+          <option value="Stocks">Stocks</option>
+        </select>
       </div>
       <div class="controls">
         <select id="weapon-left"></select>
