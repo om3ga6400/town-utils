@@ -5,8 +5,8 @@
     "horizontal_recoil": "-5%",
     "accuracy": "-10%",
     "aim_speed": "33%",
-    "muzzle_flip": "30%",
-    "sway_time": "20%",
+    "aim_sway": "30%",
+    "equip_speed": "20%",
     "game_pass": false
   },
   "SE Elite Grip": {
@@ -36,15 +36,15 @@
     "horizontal_recoil": "-40%",
     "accuracy": "10%",
     "aim_speed": "50%",
-    "equip_speed": "-30%",
-    "sway_time": "20%",
+    "equip_speed": "20%",
+    "sway_time": "-30%",
     "game_pass": false
   },
   "RSB Grip": {
     "weight": 0.1,
     "vertical_recoil": "-5%",
     "horizontal_recoil": "-20%",
-    "accuracy": "8%",
+    "accuracy": "7.5%",
     "aim_speed": "-15%",
     "equip_speed": "-10%",
     "game_pass": false
@@ -55,15 +55,15 @@
     "horizontal_recoil": "-5%",
     "accuracy": "-10%",
     "aim_speed": "33%",
-    "muzzle_flip": "30%",
-    "sway_time": "20%",
+    "equip_speed": "20%",
+    "aim_sway": "30%",
     "game_pass": false
   },
   "Folding Grip": {
     "weight": 1.5,
     "vertical_recoil": "-20%",
     "horizontal_recoil": "-20%",
-    "accuracy": "8%",
+    "accuracy": "7.5%",
     "aim_speed": "10%",
     "guns": ["MP7"],
     "game_pass": false
@@ -74,8 +74,7 @@
     "horizontal_recoil": "-5%",
     "accuracy": "5%",
     "aim_speed": "-20%",
-    "equip_speed": "-10%",
-    "sway_time": "-10%",
+    "reload_speed": "-10%",
     "game_pass": false
   },
   "Angled Grip": {
@@ -84,7 +83,7 @@
     "horizontal_recoil": "-10%",
     "accuracy": "50%",
     "muzzle_flip": "-15%",
-    "equip_speed": "35%",
+    "sway_time": "35%",
     "game_pass": false
   },
   "Ergo Grip": {
@@ -93,8 +92,8 @@
     "horizontal_recoil": "-5%",
     "accuracy": "-10%",
     "aim_speed": "33%",
-    "muzzle_flip": "30%",
-    "sway_time": "20%",
+    "equip_speed": "20%",
+    "aim_sway": "30%",
     "game_pass": false
   },
   "MOE Grip": {
@@ -109,8 +108,8 @@
     "horizontal_recoil": "-40%",
     "accuracy": "75%",
     "aim_speed": "50%",
-    "muzzle_flip": "-75%",
-    "equip_speed": "100%",
+    "aim_sway": "-75%",
+    "sway_time": "100%",
     "game_pass": false
   },
   "Strike Grip": {
@@ -118,8 +117,8 @@
     "vertical_recoil": "-5%",
     "horizontal_recoil": "-25%",
     "accuracy": "30%",
-    "muzzle_flip": "-10%",
-    "equip_speed": "20%",
+    "aim_sway": "-10%",
+    "sway_time": "20%",
     "game_pass": false
   },
   "Hera CQR Front Grip": {
@@ -127,8 +126,8 @@
     "vertical_recoil": "-25%",
     "horizontal_recoil": "-10%",
     "aim_speed": "20%",
-    "equip_speed": "25%",
-    "sway_time": "33%",
+    "equip_speed": "33%",
+    "sway_time": "25%",
     "game_pass": false
   }
 }

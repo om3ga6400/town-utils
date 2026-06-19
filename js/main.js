@@ -19,6 +19,8 @@ const STAT_DEFINITIONS = [
   { key: "reload_speed_empty", label: "Reload (empty)", higher: false },
   { key: "equip_speed", label: "Equip speed", higher: false },
   { key: "aim_speed", label: "Aim speed", higher: false },
+  { key: "aim_sway", label: "Aim sway", higher: false },
+  { key: "sway_time", label: "Sway time", higher: false },
   { key: "weight", label: "Weight", higher: false },
   { key: "ammo", label: "Ammo", higher: true },
   { key: "pellet_count", label: "Pellet count", higher: true },
@@ -67,7 +69,15 @@ const weaponCategory = (weapon) => {
   return "Unknown";
 };
 
-const weapons = (category) => (category === "all" ? (ITEM_CATEGORIES.Guns?.weapons ?? []) : (ITEM_CATEGORIES[category]?.weapons ?? []));
+const weapons = (category) => {
+  if (category === "all") {
+    return ITEM_CATEGORIES.Guns?.weapons ?? [];
+  }
+  if (category === "attachments") {
+    return ATTACHMENT_CATEGORIES.flatMap((name) => ITEM_CATEGORIES[name]?.weapons ?? []);
+  }
+  return ITEM_CATEGORIES[category]?.weapons ?? [];
+};
 
 const settings = () => ({
   duration: num(dom.dpsTime.value, 10),
@@ -125,7 +135,7 @@ const renderComparison = () => {
       .map((stat) => {
         const leftValue = statValue(left, stat, set);
         const rightValue = statValue(right, stat, set);
-        if (leftValue === "—" && rightValue === "—") return "";
+        if (leftValue === "—" || rightValue === "—") return "";
         const leftClass = cls(normalize(stat.key, leftValue), normalize(stat.key, rightValue), stat.higher);
         const rightClass = cls(normalize(stat.key, rightValue), normalize(stat.key, leftValue), stat.higher);
         return `<div class="stat-row"><div class="${leftClass}">${leftValue}</div><div>${stat.label}</div><div class="${rightClass}">${rightValue}</div></div>`;
@@ -143,12 +153,14 @@ const renderSearch = () => {
   dom.searchResults.innerHTML = weapons(dom.classFilter.value)
     .filter((weapon) => weapon.toLowerCase().includes(query))
     .map((weapon) => ({ name: weapon, value: statValue(weapon, stat, set) }))
+    .filter((item) => item.value !== "—")
     .sort((a, b) => {
       const aValue = normalize(statKey, a.value);
       const bValue = normalize(statKey, b.value);
       if (!Number.isFinite(aValue)) return Number.isFinite(bValue) ? 1 : 0;
       if (!Number.isFinite(bValue)) return -1;
-      return order * (aValue - bValue);
+      const bestToWorst = stat.higher === false ? aValue - bValue : bValue - aValue;
+      return order === -1 ? bestToWorst : -bestToWorst;
     })
     .map(
       (item, index) => `
@@ -198,6 +210,11 @@ const attachEventListeners = () => {
 
 const init = () => {
   dom.statSelect.innerHTML = STAT_DEFINITIONS.map((stat) => `<option value="${stat.key}">${stat.label}</option>`).join("");
+  dom.categorySelect.innerHTML = SEARCH_CATEGORIES.map((category) => {
+    if (category === "all") return `<option value="${category}">All Guns</option>`;
+    if (category === "attachments") return `<option value="${category}">All Attachments</option>`;
+    return `<option value="${category}">${category}</option>`;
+  }).join("");
   renderWeaponOptions();
   toggleDpsControls();
   refresh();
@@ -206,6 +223,7 @@ const init = () => {
 
 const GUN_CATEGORIES = ["LMGs", "Pistols", "Rifles", "Shotguns", "SMGs", "Snipers", "Specials"];
 const ATTACHMENT_CATEGORIES = ["Barrels", "Grips", "Others", "Sights", "Stocks"];
+const SEARCH_CATEGORIES = ["all", "attachments", ...GUN_CATEGORIES, ...ATTACHMENT_CATEGORIES];
 
 const loadDataAndInit = async () => {
   const allGuns = [];
@@ -221,6 +239,11 @@ const loadDataAndInit = async () => {
     Object.assign(ITEM_STATS, data);
     ITEM_CATEGORIES[category] = { weapons: Object.keys(data) };
   }
+  dom.classFilter.innerHTML = SEARCH_CATEGORIES.map((category) => {
+    if (category === "all") return `<option value="${category}">All Guns</option>`;
+    if (category === "attachments") return `<option value="${category}">All Attachments</option>`;
+    return `<option value="${category}">${category}</option>`;
+  }).join("");
   init();
 };
 
