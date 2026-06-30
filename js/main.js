@@ -2,36 +2,36 @@ const ITEM_STATS = {};
 const ITEM_CATEGORIES = {};
 
 const STAT_DEFINITIONS = [
-  { key: "dps", label: "DPS", higher: true, computed: true },
-  { key: "damage_max", label: "Damage (max)", higher: true },
-  { key: "damage_min", label: "Damage (min)", higher: true },
-  { key: "firerate", label: "Fire rate (RPM)", higher: true },
-  { key: "damage_falloff_start", label: "Falloff start", higher: true },
-  { key: "max_bullet_range", label: "Max range", higher: true },
-  { key: "hip_fire_accuracy", label: "Hip accuracy", higher: true },
-  { key: "ads_accuracy", label: "ADS accuracy", higher: true },
-  { key: "vertical_recoil", label: "Vertical recoil", higher: false },
-  { key: "horizontal_recoil", label: "Horizontal recoil", higher: false },
-  { key: "head_multiplier", label: "Head multiplier", higher: true },
-  { key: "torso_multiplier", label: "Torso multiplier", higher: true },
-  { key: "limb_multiplier", label: "Limb multiplier", higher: true },
-  { key: "reload_speed_partial", label: "Reload (partial)", higher: false },
-  { key: "reload_speed_empty", label: "Reload (empty)", higher: false },
-  { key: "equip_speed", label: "Equip speed", higher: false },
-  { key: "aim_speed", label: "Aim speed", higher: false },
-  { key: "aim_sway", label: "Aim sway", higher: false },
-  { key: "sway_time", label: "Sway time", higher: false },
-  { key: "weight", label: "Weight", higher: false },
-  { key: "ammo", label: "Ammo", higher: true },
-  { key: "pellet_count", label: "Pellet count", higher: true },
-  { key: "reload_per_bullet", label: "Reload per bullet", higher: false },
-  { key: "game_pass", label: "Game Pass" },
-  { key: "accuracy", label: "Accuracy", higher: true },
-  { key: "range_finder", label: "Range Finder", higher: true },
-  { key: "suppression_mult", label: "Suppression", higher: true },
-  { key: "hide_flash", label: "Hide Flash", higher: true },
-  { key: "bullet_speed_min", label: "Bullet Speed", higher: true },
-  { key: "muzzle_flip", label: "Muzzle Flip", higher: false },
+  { key: "dps", label: "DPS", higher: true, computed: true, scope: "gun" },
+  { key: "damage_max", label: "Damage (max)", higher: true, scope: "gun" },
+  { key: "damage_min", label: "Damage (min)", higher: true, scope: "gun" },
+  { key: "firerate", label: "Fire rate (RPM)", higher: true, scope: "gun" },
+  { key: "damage_falloff_start", label: "Falloff start", higher: true, scope: "gun" },
+  { key: "max_bullet_range", label: "Max range", higher: true, scope: "gun" },
+  { key: "hip_fire_accuracy", label: "Hip accuracy", higher: true, scope: "gun" },
+  { key: "ads_accuracy", label: "ADS accuracy", higher: true, scope: "gun" },
+  { key: "vertical_recoil", label: "Vertical recoil", higher: false, scope: "both" },
+  { key: "horizontal_recoil", label: "Horizontal recoil", higher: false, scope: "both" },
+  { key: "head_multiplier", label: "Head multiplier", higher: true, scope: "gun" },
+  { key: "torso_multiplier", label: "Torso multiplier", higher: true, scope: "gun" },
+  { key: "limb_multiplier", label: "Limb multiplier", higher: true, scope: "gun" },
+  { key: "reload_speed_partial", label: "Reload (partial)", higher: false, scope: "gun" },
+  { key: "reload_speed_empty", label: "Reload (empty)", higher: false, scope: "gun" },
+  { key: "equip_speed", label: "Equip speed", higher: false, scope: "both" },
+  { key: "aim_speed", label: "Aim speed", higher: false, scope: "both" },
+  { key: "aim_sway", label: "Aim sway", higher: false, scope: "attachment" },
+  { key: "sway_time", label: "Sway time", higher: false, scope: "attachment" },
+  { key: "weight", label: "Weight", higher: false, scope: "both" },
+  { key: "ammo", label: "Ammo", higher: true, scope: "gun" },
+  { key: "pellet_count", label: "Pellet count", higher: true, scope: "gun" },
+  { key: "reload_per_bullet", label: "Reload per bullet", higher: false, scope: "gun" },
+  { key: "game_pass", label: "Game Pass", scope: "both" },
+  { key: "accuracy", label: "Accuracy", higher: true, scope: "attachment" },
+  { key: "range_finder", label: "Range Finder", higher: true, scope: "attachment" },
+  { key: "suppression_mult", label: "Suppression", higher: true, scope: "attachment" },
+  { key: "hide_flash", label: "Hide Flash", higher: true, scope: "attachment" },
+  { key: "bullet_speed_min", label: "Bullet Speed", higher: true, scope: "attachment" },
+  { key: "muzzle_flip", label: "Muzzle Flip", higher: false, scope: "attachment" },
 ];
 
 const dom = {
@@ -68,6 +68,17 @@ const weaponCategory = (weapon) => {
   }
   return "Unknown";
 };
+
+const isAttachmentCategory = (category) => category === "attachments" || ATTACHMENT_CATEGORIES.includes(category);
+
+const statGroupsForCategory = (category) => {
+  const typeScope = isAttachmentCategory(category) ? "attachment" : "gun";
+  const shared = { label: "Both", stats: STAT_DEFINITIONS.filter((stat) => stat.scope === "both") };
+  const typeOnly = { label: typeScope === "attachment" ? "Attachments" : "Guns", stats: STAT_DEFINITIONS.filter((stat) => stat.scope === typeScope) };
+  return typeScope === "attachment" ? [shared, typeOnly] : [typeOnly, shared];
+};
+
+const sortableStats = (category) => statGroupsForCategory(category).flatMap((group) => group.stats);
 
 const weapons = (category) => {
   if (category === "all") {
@@ -124,6 +135,15 @@ const renderWeaponOptions = () => {
   dom.rightWeapon.selectedIndex = Math.min(1, list.length - 1);
 };
 
+const renderSortOptions = () => {
+  const current = dom.statSelect.value;
+  const groups = statGroupsForCategory(dom.classFilter.value);
+  dom.statSelect.innerHTML = groups.map((group) => `<optgroup label="${group.label}">${group.stats.map((stat) => `<option value="${stat.key}">${stat.label}</option>`).join("")}</optgroup>`).join("");
+  const stats = sortableStats(dom.classFilter.value);
+  dom.statSelect.value = stats.some((stat) => stat.key === current) ? current : (stats[0]?.key ?? "");
+  toggleDpsControls();
+};
+
 const renderComparison = () => {
   const left = dom.leftWeapon.value;
   const right = dom.rightWeapon.value;
@@ -135,7 +155,7 @@ const renderComparison = () => {
       .map((stat) => {
         const leftValue = statValue(left, stat, set);
         const rightValue = statValue(right, stat, set);
-        if (leftValue === "—" || rightValue === "—") return "";
+        if (leftValue === "—" && rightValue === "—") return "";
         const leftClass = cls(normalize(stat.key, leftValue), normalize(stat.key, rightValue), stat.higher);
         const rightClass = cls(normalize(stat.key, rightValue), normalize(stat.key, leftValue), stat.higher);
         return `<div class="stat-row"><div class="${leftClass}">${leftValue}</div><div>${stat.label}</div><div class="${rightClass}">${rightValue}</div></div>`;
@@ -149,7 +169,7 @@ const renderSearch = () => {
   const statKey = dom.statSelect.value;
   const order = dom.orderSelect.value === "desc" ? -1 : 1;
   const set = settings();
-  const stat = STAT_DEFINITIONS.find((item) => item.key === statKey) || STAT_DEFINITIONS[0];
+  const stat = sortableStats(dom.classFilter.value).find((item) => item.key === statKey) || sortableStats(dom.classFilter.value)[0];
   dom.searchResults.innerHTML = weapons(dom.classFilter.value)
     .filter((weapon) => weapon.toLowerCase().includes(query))
     .map((weapon) => ({ name: weapon, value: statValue(weapon, stat, set) }))
@@ -195,7 +215,11 @@ const attachEventListeners = () => {
     toggleDpsControls();
     renderSearch();
   });
-  [dom.searchInput, dom.classFilter, dom.orderSelect].forEach((el) => el.addEventListener("change", renderSearch));
+  dom.classFilter.addEventListener("change", () => {
+    renderSortOptions();
+    renderSearch();
+  });
+  [dom.searchInput, dom.orderSelect].forEach((el) => el.addEventListener("change", renderSearch));
   [dom.dpsTime, dom.multiplierSelect, dom.accuracyInput, dom.distanceInput].forEach((el) => {
     el.addEventListener("input", refresh);
     el.addEventListener("change", refresh);
@@ -209,14 +233,13 @@ const attachEventListeners = () => {
 };
 
 const init = () => {
-  dom.statSelect.innerHTML = STAT_DEFINITIONS.map((stat) => `<option value="${stat.key}">${stat.label}</option>`).join("");
   dom.categorySelect.innerHTML = SEARCH_CATEGORIES.map((category) => {
     if (category === "all") return `<option value="${category}">All Guns</option>`;
     if (category === "attachments") return `<option value="${category}">All Attachments</option>`;
     return `<option value="${category}">${category}</option>`;
   }).join("");
+  renderSortOptions();
   renderWeaponOptions();
-  toggleDpsControls();
   refresh();
   attachEventListeners();
 };
