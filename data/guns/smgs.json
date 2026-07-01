@@ -2,7 +2,7 @@
   "SR-3M Vikhr": {
     "damage_max": 40,
     "damage_min": 19,
-    "firerate": 865,
+    "firerate": 815,
     "damage_falloff_start": 85,
     "max_bullet_range": 190,
     "hip_fire_accuracy": 55,
